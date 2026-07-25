@@ -12,3 +12,31 @@ eval_1600.json  eval_3200.json  eval_400.json
 (base) wangxy@Tang1:/NAS/wangxy/rebuttal$ cd locomo
 (base) wangxy@Tang1:/NAS/wangxy/rebuttal/locomo$ ls
 locomo10.json
+
+
+
+Annotation 1
+pip install -e ./r2mem_core/gam 的作用只是把随代码附带的 GAM 包以“可编辑模式”注册到当前虚拟环境，主要方便统一复现。它不是专门给评审人的，也不是必须步骤。
+代码本身会自动加载 r2mem_core，所以你原来的虚拟环境如果已经安装好 vllm、torch、transformers、openai、faiss、sentence-transformers 等依赖，可以不执行这条命令。
+你这样操作没问题：
+终端 1：
+cd /NAS/wangxy/rebuttal/cross_dataset_validation
+bash start_vllm.sh
+这个终端会持续运行，不要关闭。
+终端 2：
+cd /NAS/wangxy/rebuttal/cross_dataset_validation
+
+python 00_prepare.py \
+  --config config.server.json \
+  --no-download
+但这两步分别只是：
+启动 Qwen2.5-3B 的 vLLM 服务；
+检查数据、代码路径和数据哈希。
+它们还没有真正开始实验。检查成功后，建议先跑 10 条：
+python run_pipeline.py \
+  --config config.server.json \
+  --smoke-test 10
+10 条全部正常以后，再正式运行：
+python run_pipeline.py \
+  --config config.server.json
+因此，你不需要重新安装虚拟环境；直接激活当时的环境，然后按上述顺序运行即可。
