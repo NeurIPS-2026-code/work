@@ -40,3 +40,22 @@ python run_pipeline.py \
 python run_pipeline.py \
   --config config.server.json
 因此，你不需要重新安装虚拟环境；直接激活当时的环境，然后按上述顺序运行即可。
+
+
+
+[151/152] Evaluating and reflecting
+[152/152] Evaluating and reflecting
+Traceback (most recent call last):
+  File "/NAS/wangxy/rebuttal/cross_dataset_validation/02_build_experience_bank.py", line 581, in <module>
+    main()
+  File "/NAS/wangxy/rebuttal/cross_dataset_validation/02_build_experience_bank.py", line 497, in main
+    raise RuntimeError(
+RuntimeError: Experience construction failed for 31 questions. See /NAS/wangxy/rebuttal/cross_dataset_validation/outputs/locomo26_to_hotpotqa_qwen25_3b/02_experience_bank/build_errors.json and rerun to retry.
+Traceback (most recent call last):
+  File "/NAS/wangxy/rebuttal/cross_dataset_validation/run_pipeline.py", line 87, in <module>
+    main()
+  File "/NAS/wangxy/rebuttal/cross_dataset_validation/run_pipeline.py", line 81, in main
+    subprocess.run(command, cwd=ROOT, check=True)
+  File "/NAS/wangxy/anaconda3/envs/GAM/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/NAS/wangxy/anaconda3/envs/GAM/bin/python', '/NAS/wangxy/rebuttal/cross_dataset_validation/02_build_experience_bank.py', '--config', '/NAS/wangxy/rebuttal/cross_dataset_validation/config.server.json']' returned non-zero exit status 1.
