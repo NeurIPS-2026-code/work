@@ -1,0 +1,234 @@
+[
+  {
+    "condition": "question:2014 S/S is the debut album of a South Korean boy group that was formed by who? temp_memory:2014 S/S is the debut album of South Korean group WINNER, formed by YG Entertainment. The group debuted on April 26, 2013 with 'Dreamer', featuring the narration of their labelmate IU. The album was released on August 12, 2014.",
+    "experience": "IF <question seeks a specific entity (album, artist, etc.) and temp_memory contains relevant but incomplete information about it> THEN <judge sufficiency as true if the information is clear and complete enough; do not generate a new request if the information is already sufficient to answer the question; otherwise, generate a new_request targeting the missing piece of information>",
+    "module": "Reflection",
+    "situation": "An inquiry for the record label behind the debut album of a South Korean boy group, given a partial memory of the group's name and label.",
+    "summary": "The question asks for the label that produced the 2014 S/S debut album of the South Korean boy group WINNER. The temp_memory contains that WINNER is a South Korean group formed by YG Entertainment.",
+    "thinking": "The reflection correctly judged that the current information is sufficient to answer the question without over-complicating the process. The system stopped at the right time and did not generate a new request, which was appropriate."
+  },
+  {
+    "condition": "question:What screenwriter with credits for \"Evolution\" co-wrote a film starring Nicolas Cage and Téa Leoni? temp_memory:David Weissman co-wrote the films 'Evolution' and 'The Family Man'. 'The Family Man' starred Nicolas Cage and Téa Leoni.",
+    "experience": "IF A query asks about a person who has co-written a specific film and worked on another film starring certain actors, and the temp_memory contains information about the person and at least one of the films they have co-written, then determine sufficiency by checking if the temp_memory includes information about the second film starring the specified actors. If the information is sufficient, mark 'enough' as true; otherwise, generate a new_request for the second film.",
+    "module": "Reflection",
+    "situation": "A query about a screenwriter who co-wrote a specific film and worked on another film starring certain actors, given a temp_memory containing information about the screenwriter and one of the films.",
+    "summary": "The user asked about a screenwriter who co-wrote 'Evolution' and also worked on a film starring Nicolas Cage and Téa Leoni. The temp_memory contained information about David Weissman co-writing both 'Evolution' and 'The Family Man', which starred Nicolas Cage and Téa Leoni.",
+    "thinking": "The system correctly judged the information as sufficient to answer the question and avoided unnecessary retrieval. It recognized that the coarse-grained answer was valid and complete."
+  },
+  {
+    "condition": "question:What is the name for the adventure in \"Tunnels and Trolls\", a game designed by Ken St. Andre? temp_memory:The adventure module for the tabletop role-playing game 'Tunnels and Trolls', which was designed by Ken St. Andre, is called 'Arena of Khazan'. This module was developed by New World Computing and was available for PC, FM Towns, PC-88, and PC-98 platforms.",
+    "experience": "IF A query seeks the name of an adventure module in a tabletop role-playing game and the current temp_memory only provides information about the module's name, developer, or platforms THEN Generate a new_request focused on clarifying the module's name and additional details.",
+    "module": "Reflection",
+    "situation": "A query seeks the name of an adventure module in a specific game along with related developers and platforms. The current temp_memory contains fragmented information about a particular module.",
+    "summary": "The question asks for the name of the adventure module in 'Tunnels and Trolls' and its development details. Temp_memory included information about the module 'Arena of Khazan' and its platforms, but not its name or developer.",
+    "thinking": "The system's decision to generate a new_request is correct and targeted. The initial temp_memory contained partial information but did not fully address the question's need for the adventure module name and its development details. The new_request crafted is clear and focuses on the missing specifics."
+  },
+  {
+    "condition": "question:What is the name for the adventure in \"Tunnels and Trolls\", a game designed by Ken St. Andre? temp_memory:The adventure module for the tabletop role-playing game 'Tunnels and Trolls', which was designed by Ken St. Andre, is called 'Arena of Khazan'. This module was developed by New World Computing and was available for PC, FM Towns, PC-88, and PC-98 platforms.",
+    "experience": "IF The QUESTION is seeking a specific piece of information (like a name or title) and the TEMP_MEMORY contains relevant but incomplete information THEN Determine if the current information is sufficient to answer the QUESTION. If not, generate a new_REQUEST that focuses on obtaining the missing information related to the specific piece of data needed.",
+    "module": "Reflection",
+    "situation": "A question seeks the name of an adventure module in 'Tunnels and Trolls'. The temp_memory holds information about the module's name and some platforms.",
+    "summary": "The question asked about the name of the adventure module in 'Tunnels and Trolls'. The temp_memory contained the name 'Arena of Khazan' and some platform information.",
+    "thinking": "The reflection correctly identified that the current information is sufficient to answer the question. However, the new_request generated includes details that were already provided ('Arena of Khazan' and its release platforms), and it also asks for additional information that might not be necessary. The system did not generate a more targeted or concise new_request."
+  },
+  {
+    "condition": "question:When was Poison's album \"Shut Up, Make Love\" released? temp_memory:Poison's album 'Shut Up, Make Love' was released in 2000. The song 'Shut Up, Make Love' was the first single from their 2000 album 'Crack a Smile... and More!', which was released on March 14, 2000.",
+    "experience": "IF <QUESTION asks for a specific date or year of an album by a particular artist>, AND <temp_memory contains the exact release year of the album along with additional context>, THEN <enough = true>",
+    "module": "Reflection",
+    "situation": "When a user asks about the release date of a specific album by a particular artist, and the temp_memory includes the exact release year and possibly related information.",
+    "summary": "The question asks when Poison's album 'Shut Up, Make Love' was released. The temp_memory contains the release year and some additional context.",
+    "thinking": "The reflection process correctly judged that the retrieved information was sufficient to answer the question, providing the release year and additional context. The system did not make unnecessary follow-up queries and accurately recognized that the question required only a single fact."
+  },
+  {
+    "condition": "question:What government position was held by the woman who portrayed Corliss Archer in the film Kiss and Tell? temp_memory:Shirley Temple, who played Corliss Archer in the 1945 film 'Kiss and Tell', was an American actress, singer, and dancer. She was the number one box-office draw as a child actress from 1935 to 1938. As an adult, she was named United States ambassador to Ghana and to Czechoslovakia.",
+    "experience": "IF A query seeks information about a public figure's government position following a significant role in film AND the temporary memory includes their acting career details AND the acting career details indicate past government positions THEN evaluate if those details are sufficient to answer the question. If not, generate a new request that specifically asks for the public figure's government positions.",
+    "module": "Reflection",
+    "situation": "A query seeks information on a government position held by an actress who played a character in a specific film. The temporary memory contains factual details about the actress's acting career and some government positions held.",
+    "summary": "The user asked about the government position Shirley Temple held after playing Corliss Archer in the film 'Kiss and Tell'. The temporary memory provided her acting career highlights and ambassadorships.",
+    "thinking": "The reflection correctly identified that the current information is insufficient but made redundant follow-up requests. The diagnostic reason suggests focusing on recognizing when partial answers are sufficient and crafting more targeted follow-up questions."
+  },
+  {
+    "condition": "question:Who was known by his stage name Aladin and helped organizations improve their performance as a consultant? temp_memory:Eenasul Fateh, also known by his stage name Aladin, is a Bangladeshi-British cultural practitioner, magician, live artist and former international management consultant. He is best known for his role as the voice of Gord in the 2006 video game Bully from Rockstar Games.",
+    "experience": "IF <A question asks about a person known by a stage name and their role as a consultant, but the temp_memory contains specific details about their past as a consultant> THEN (enough = false + generate a detailed new_request)",
+    "module": "Reflection",
+    "situation": "A question seeks information about a person known as Aladin who was a consultant. The current temp_memory includes details about Eenasul Fateh, a cultural practitioner and former consultant.",
+    "summary": "The question asked who was known as Aladin and helped organizations improve their performance as a consultant. The temp_memory contained information about Eenasul Fateh, who is known as Aladin and served as an international management consultant.",
+    "thinking": "The reflection process failed to correctly identify that the initial temp_memory contained sufficient information to answer the question. The system generated overly broad follow-up queries instead of stopping early."
+  },
+  {
+    "condition": "question:Who was known by his stage name Aladin and helped organizations improve their performance as a consultant? temp_memory:Eenasul Fateh, also known by his stage name Aladin, is a Bangladeshi-British cultural practitioner, magician, live artist and former international management consultant. He is best known for his role as the voice of Gord in the 2006 video game Bully from Rockstar Games.",
+    "experience": "IF <QUESTION asks about a person known by a stage name and their professional role> AND <TEMP_MEMORY contains clear information about the person's identity and profession> THEN <enough = true>",
+    "module": "Reflection",
+    "situation": "When faced with a question about a person known by a stage name and their professional role, the temporary memory already contains sufficient information about their identity and profession.",
+    "summary": "The query asked about a person known as Aladin who worked as a consultant. The temporary memory contained information about Eenasul Fateh, a cultural practitioner, magician, and live artist who also served as an international management consultant.",
+    "thinking": "The reflection correctly diagnosed the issue but incorrectly generated follow-up queries. The system recognized the key information but failed to properly conclude that the current content was sufficient."
+  },
+  {
+    "condition": "question:Brown State Fishing Lake is in a country that has a population of how many inhabitants ? temp_memory:Brown State Fishing Lake is located in Brown County, Kansas, United States. It is a protected area of 62 acres with a maximum depth of 13 feet. The lake is sometimes confused with Shawnee State Fishing Lake, which is located in northern Shawnee County, Kansas. The population of the country where Brown State Fishing Lake is situated is unknown from the provided evidence.",
+    "experience": "IF A query seeks population details for a specific country where a notable geographical feature (lake or city) is located, AND the temp_memory contains only basic information about the geographical feature but lacks population data THEN judge the sufficiency as false and generate a new_request focusing on the population of the country.",
+    "module": "Reflection",
+    "situation": "A query about a specific country's population where a lake is located, with a temp_memory containing limited geographical and physical details about the lake.",
+    "summary": "The question asks about the population of the country where Brown State Fishing Lake is located. The temp_memory contains basic information about the lake's location and size but lacks population data.",
+    "thinking": "The reflection correctly identified that the current information was insufficient and generated appropriate follow-up queries. However, the follow-up queries were redundant and could be simplified."
+  },
+  {
+    "condition": "question:Which other Mexican Formula One race car driver has held the podium besides the Force India driver born in 1990? temp_memory:Michael James Lewis, born on December 24, 1990, in Laguna Beach, California, has competed in various racing vehicles including Formula 3, Formula BMW, Ford Focus Midgets, Touring Cars, Late Model Stock Cars, Quarter Midgets, and Go-Karts. Michael also tested a Formula One car for Scuderia Ferrari F1 in the F60 chassis on November 15, 2011. Michael's passion for racing is paramount and he has lived every day for motorsport. Sergio Pérez, the only other Mexican driver to have finished on the podium besides the Force India driver born in 1990, races with Sahara Force India F1 Team.",
+    "experience": "IF The temporary memory contains details about multiple race car drivers and their achievements, but lacks specific information about the Mexican driver with podium finishes for a given year THEN Generate a new_request focusing on the specific Mexican driver with podium finishes for the requested year",
+    "module": "Reflection",
+    "situation": "A user seeks information about a Mexican Formula One race car driver who has held the podium besides a specific Force India driver born in 1990, while the temporary memory includes details about Michael James Lewis and Sergio Pérez.",
+    "summary": "The user asked about another Mexican Formula One race car driver who has held the podium besides the Force India driver born in 1990. The temporary memory contained information about Michael James Lewis and Sergio Pérez, but lacked direct details about the specific Mexican driver with podium finishes.",
+    "thinking": "The reflection correctly identified that the current information was insufficient but failed to narrow down the query to the specific Mexican driver with podium finishes. The follow-up requests were too broad and included irrelevant aspects."
+  },
+  {
+    "condition": "question:Which other Mexican Formula One race car driver has held the podium besides the Force India driver born in 1990? temp_memory:Sergio Pérez, the only other Mexican driver to have finished on the podium besides the Force India driver born in 1990, races with Sahara Force India F1 Team.",
+    "experience": "IF <QUESTION seeks additional information about a specific driver with a podium finish besides a known driver, AND temp_MEMORY already contains the name of such a driver> THEN ENOUGH = TRUE",
+    "module": "Reflection",
+    "situation": "A query seeks information about a Mexican Formula One driver with a podium finish besides a specified driver. The temp_memory contains the name of one such driver.",
+    "summary": "The user asked about another Mexican Formula One race car driver who has held a podium besides the 1990-born Force India driver. The current temp_memory stated that Sergio Pérez is the only other Mexican driver to have achieved this.",
+    "thinking": "The reflection correctly diagnosed that the current information in temp_memory was sufficient to answer the question. However, it generated multiple unnecessary follow-up queries which were not required."
+  },
+  {
+    "condition": "question:Aside from the Apple Remote, what other device can control the program Apple Remote was originally designed to interact with? temp_memory:The Apple Remote was originally designed to interact with the Front Row media program on the iSight iMac G5 and is compatible with some later desktop and portable Macintosh computers. The Apple Remote was later replaced with the Siri Remote in the fourth generation of Apple TV. The Apple Remote was not designed to control the program it was named after, the Pochampally Saree, which is a saree made in India with intricate geometric patterns in Ikat style of dyeing. It was also not designed to control the 2012 West Virginia Mountaineers football team, nor was it designed to control the 2017 FIFA Women's World Cup, nor was it designed to control the 2018 FIFA World Cup.",
+    "experience": "IF <temp_memory contains information about a device's original function AND the query asks about alternative devices that perform a similar function> THEN (enough = false + generate a new_request focusing on alternative devices)",
+    "module": "Reflection",
+    "situation": "A user seeks alternative devices for controlling a program, and the temporary memory includes details about the Apple Remote’s original purpose and its replacement.",
+    "summary": "The user asked about devices that could control the program the Apple Remote was originally designed to interact with, and the temporary memory contained information about the Apple Remote's original purpose and its replacement.",
+    "thinking": "The reflection process correctly diagnosed that the current information was insufficient but incorrectly focused on creating a new request that included multiple, unrelated queries. The focus should have been more narrow and directly related to identifying alternative devices."
+  },
+  {
+    "condition": "question:Aside from the Apple Remote, what other device can control the program Apple Remote was originally designed to interact with? temp_memory:The Apple Remote was originally designed to interact with the Front Row media program on the iSight iMac G5 and is compatible with some later desktop and portable Macintosh computers. The Apple Remote was later replaced with the Siri Remote in the fourth generation of Apple TV. The Apple Remote was not designed to control the Pochampally Saree, a saree made in India with intricate geometric patterns in Ikat style of dyeing, nor was it designed to control the 2012 West Virginia Mountaineers football team, nor was it designed to control the 2017 FIFA Women's World Cup, nor was it designed to control the 2018 FIFA World Cup.",
+    "experience": "IF temp_memory contains insufficient information about alternative devices to control the program the Apple Remote was designed for THEN generate a new_request focusing on identifying and describing these alternative devices",
+    "module": "Reflection",
+    "situation": "A query seeks information about alternative devices to the Apple Remote that can control the same program. The current temp_memory lacks specifics about these alternative devices.",
+    "summary": "The question asks about devices other than the Apple Remote that can control the same program it was designed for. The temp_memory contains information about the Apple Remote's compatibility with certain Macs and its replacement by the Siri Remote on later Apple TVs.",
+    "thinking": "The reflection was partially successful in identifying the need for more specific information about alternative control devices. However, it did not directly address the core issue of identifying other devices the Apple Remote could control, which led to irrelevant follow-up questions."
+  },
+  {
+    "condition": "question:Aside from the Apple Remote, what other device can control the program Apple Remote was originally designed to interact with? temp_memory:The Apple Remote was originally designed to interact with the Front Row media program on the iSight iMac G5 and is compatible with some later desktop and portable Macintosh computers. The Apple Remote was not designed to control the Pochampally Saree, a saree made in India with intricate geometric patterns in Ikat style of dyeing, nor was it designed to control the 2012 West Virginia Mountaineers football team, nor was it designed to control the 2017 FIFA Women's World Cup, nor was it designed to control the 2018 FIFA World Cup.",
+    "experience": "IF <QUESTION asks about devices controlled by a specific device, and TEMP_MEMORY contains general information but lacks specific details> THEN <judge sufficiency as false, generate a new_request targeting specific devices and their compatibility>",
+    "module": "Reflection",
+    "situation": "A query seeks alternative devices controlled by the Apple Remote, while the temporary memory includes details about the Apple Remote's original design and compatibility.",
+    "summary": "The user asked about other devices that the Apple Remote could control, and the temporary memory contained information about the Front Row media program and compatibility with certain Macs.",
+    "thinking": "The reflection correctly identifies that the current information is insufficient but fails to narrow down the focus to the specific devices the Apple Remote could control. The follow-up queries remain overly broad and include irrelevant aspects."
+  },
+  {
+    "condition": "question:What was the father of Kasper Schmeichel voted to be by the IFFHS in 1992? temp_memory:",
+    "experience": "IF <temp_memory contains follow-up queries about a specific historical event or voting result, and these queries directly address the original question> THEN <enough = true>",
+    "module": "Reflection",
+    "situation": "A query about a historical voting result (father of Kasper Schmeichel) is being analyzed, with temp_memory consisting of follow-up inquiries about the voting process for Kasper Schmeichel.",
+    "summary": "The user asked about who the father of Kasper Schmeichel was voted as by the IFFHS in 1992, and temp_memory contained follow-up queries related to the voting process for Kasper Schmeichel.",
+    "thinking": "The reflection correctly diagnosed the issue but incorrectly concluded that more follow-up queries were needed. The system should have recognized that the provided questions themselves contained sufficient information to answer the original question."
+  },
+  {
+    "condition": "question:What was the father of Kasper Schmeichel voted to be by the IFFHS in 1992? temp_memory:Peter Schmeichel, the father of Kasper Schmeichel, was voted as the IFFHS World's Best Goalkeeper in 1992.",
+    "experience": "IF A query seeks historical information about a person or event, and the temp_memory contains sufficient facts related to the query without requiring additional context or details THEN judge the sufficiency as true and do not generate a new request.",
+    "module": "Reflection",
+    "situation": "A query asks for information about a historical event involving a family member, and the temp_memory contains relevant factual information.",
+    "summary": "The user asked about the father of Kasper Schmeichel being voted the IFFHS World's Best Goalkeeper in 1992. The temp_memory contained information that Peter Schmeichel, the father of Kasper Schmeichel, was voted as the IFFHS World's Best Goalkeeper in 1992.",
+    "thinking": "The reflection correctly judged that the current information in temp_memory was sufficient to answer the question. The system did not overcomplicate the decision-making process and stopped retrieval at the right time."
+  },
+  {
+    "condition": "question:Hayden is a singer-songwriter from Canada, but where does Buck-Tick hail from? temp_memory:Buck-Tick is a Japanese rock band formed in Fujioka, Gunma in 1983. The group has consisted of Atsushi Sakurai (lead vocals), Hisashi Imai (guitar), Hidehiko Hoshino (guitar), Yutaka Higuchi (bass) and Toll Yagami (drums) since 1985. They are commonly credited as one of the founders of the visual kei movement.",
+    "experience": "IF the question aims to seek specific information that can be directly answered by the temporary memory, AND the temporary memory contains relevant but incomplete information, THEN determine if the information is sufficient to answer the question and generate a targeted new request.",
+    "module": "Reflection",
+    "situation": "A question seeks specific information (Buck-Tick's origin) while the temporary memory contains related but insufficient information.",
+    "summary": "The user asked about the origin of Buck-Tick, a Japanese rock band, but the temporary memory only contained general information about the band and its members, without specifying where it was formed.",
+    "thinking": "The reflection correctly identified that the system's follow-up queries were not focused on the key information needed to answer the question. The system stopped too early by focusing on broader aspects rather than verifying the specific location."
+  },
+  {
+    "condition": "question:Hayden is a singer-songwriter from Canada, but where does Buck-Tick hail from? temp_memory:Buck-Tick is a Japanese rock band formed in Fujioka, Gunma in 1983. The group has consisted of Atsushi Sakurai (lead vocals), Hisashi Imai (guitar), Hidehiko Hoshino (guitar), Yutaka Higuchi (bass) and Toll Yagami (drums) since 1985. They are commonly credited as one of the founders of the visual kei movement.",
+    "experience": "IF <QUESTION seeks information about a band's origin, AND temp_MEMORY contains partial information about the band but lacks the origin> THEN {'enough': False, 'new_request': 'What is the origin of Buck-Tick?'}",
+    "module": "Reflection",
+    "situation": "A query seeks information about a band's origin, and the temp_memory contains partial information about the band's members and formation year, but lacks the origin.",
+    "summary": "The user asked about the origin of Buck-Tick, a Japanese rock band, and the temp_memory provided basic details about the band's members and formation year, but did not specify their origin.",
+    "thinking": "The system correctly recognized that the key information (Buck-Tick originated from Japan) was already present in the temp_memory. However, the follow-up request was still overly broad and included unnecessary details. The system should have assessed the sufficiency earlier and generated a more targeted new_request."
+  },
+  {
+    "condition": "question:Seven Brief Lessons on Physics was written by an Italian physicist that has worked in France since what year? temp_memory:Sergio Ferrara, an Italian physicist, is renowned for his work on supersymmetry and supergravity. He is an emeritus staff member at CERN (European Organization for Nuclear Research) and a professor at the University of California, Los Angeles.",
+    "experience": "IF <temp_memory contains details about a subject's academic career but lacks specific information needed to answer the core question> THEN <judge sufficiency as insufficient and generate a detailed new_request focusing on the core information gap>",
+    "module": "Reflection",
+    "situation": "A query seeks information about a book's author and the transition from Italy to France. The temp_memory contains details about the author's academic career but lacks the specific information needed to answer the question.",
+    "summary": "The question asks about the year Sergio Ferrara started working in France after working in Italy. The temp_memory provided information about Sergio Ferrara's academic positions and affiliations but not the authorship of the book or when he moved to France.",
+    "thinking": "The reflection process failed to correctly judge the sufficiency of the temp_memory, which contained factual details about Sergio Ferrara but not the author of 'Seven Brief Lessons on Physics'. The follow-up queries were aimed at relevant information but lacked focus on resolving the core question."
+  },
+  {
+    "condition": "question:Alfred Balk served as the secretary of the Committee on the Employment of Minority Groups in the News Media under which United States Vice President? temp_memory:Alfred Balk served as the secretary of the Committee on the Employment of Minority Groups in the News Media under New York Governor Nelson Rockefeller's Committee on the Employment of Minority Groups in the News Media.",
+    "experience": "IF <temp_memory contains relevant but incomplete information about a historical figure and their committee, but fails to provide the missing context for the required Vice President> THEN <judge 'enough' as false and generate a new_request targeting the exact identity and term of the Vice President>",
+    "module": "Reflection",
+    "situation": "A query about a specific historical figure (Alfred Balk) and the corresponding committee he served under, along with identifying the United States Vice President during that time.",
+    "summary": "The user attempted to find out who served as the United States Vice President under whom Alfred Balk was the secretary, given his involvement in a committee focused on minority employment in news media.",
+    "thinking": "The reflection made several errors. It incorrectly determined that additional queries were necessary due to redundancy and insufficient information. In reality, the initial information provided was sufficient to answer the question."
+  },
+  {
+    "condition": "question:Alfred Balk served as the secretary of the Committee on the Employment of Minority Groups in the News Media under which United States Vice President? temp_memory:Alfred Balk served as the secretary of the Committee on the Employment of Minority Groups in the News Media under New York Governor Nelson Rockefeller.",
+    "experience": "IF <temp_memory includes information relevant to the question but not fully answering it> AND <current information is sufficient to answer the question> THEN <enough = true>",
+    "module": "Reflection",
+    "situation": "A query seeks information about a U.S. Vice President, and the temporary memory contains details about a related position within a state governor's committee.",
+    "summary": "The user asked about Alfred Balk's role under which U.S. Vice President, and the temporary memory contained information that Alfred Balk was secretary under New York Governor Nelson Rockefeller.",
+    "thinking": "The reflection incorrectly determined that more queries were needed because it focused on redundant information rather than recognizing that the initial answer was sufficient."
+  },
+  {
+    "condition": "question:What is the name of the fight song of the university whose main campus is in Lawrence, Kansas and whose branch campuses are in the Kansas City metropolitan area? temp_memory:The University of Kansas, located in Lawrence, Kansas, and with branch campuses in the Kansas City metropolitan area, uses 'University of Kansas Song' (also known as 'We’re From Kansas') as its fight song.",
+    "experience": "IF <QUERY_ABOUT_UNIVERSITY_FIGHT_SONG_WITH_SPECIFIC_LOCATIONS_AND_BRANCH_CAMPUS_INFO_EXISTS_IN_TEMP_MEMORY> THEN <IF THE FIGHT SONG IS ALREADY PROVIDED IN TEMP MEMORY THEN DECIDE ENOUGH = TRUE; ELSE GENERATE A NEW_REQUEST TO RETRIEVE THE FIGHT SONG NAME AND RETURN NEW_REQUEST = {NEW_QUERY: 'What is the name of the fight song of the university?'}>",
+    "module": "Reflection",
+    "situation": "A query about the fight song of a university in Lawrence, Kansas, with branch campuses in the Kansas City metropolitan area, and a temp_memory containing information about the University of Kansas.",
+    "summary": "The question asked for the name of the fight song of a university located in Lawrence, Kansas, with branch campuses in the Kansas City metropolitan area. The temp_memory contained information about the University of Kansas, including its location and the song used as its fight song.",
+    "thinking": "The system correctly identified that the retrieved information was sufficient to answer the question without further need for additional data. The reflection process was accurate and efficient."
+  },
+  {
+    "condition": "question:The Vermont Catamounts men's soccer team currently competes in a conference that was formerly known as what from 1988 to 1996? temp_memory:",
+    "experience": "IF <temp_memory contains relevant but incomplete information about the conference name from 1988 to 1996> THEN (enough = false + generate a detailed new_request)",
+    "module": "Reflection",
+    "situation": "The query aims to find out the conference name from 1988 to 1996 that the Vermont Catamounts men's soccer team played in. The temp_memory holds some related information but does not contain the exact conference name.",
+    "summary": "The question asks about the conference name the Vermont Catamounts men's soccer team competed in from 1988 to 1996, which was previously known as something else. The temp_memory contains partial information but lacks the definitive answer.",
+    "thinking": "The reflection process failed to accurately assess the sufficiency of the temp_memory. The system generated multiple redundant and overly broad follow-up queries without properly evaluating the information already present."
+  },
+  {
+    "condition": "question:The Vermont Catamounts men's soccer team currently competes in a conference that was formerly known as what from 1988 to 1996? temp_memory:",
+    "experience": "IF <QUESTION about a sports team's conference change over a specific period> AND CURRENT TEMP_MEMORY contains multiple follow-up questions but lacks a clear path to the answer THEN determine if the current information is sufficient to answer the question; if not, generate a new_request that focuses on the exact conference name for the specified time frame.",
+    "module": "Reflection",
+    "situation": "The question seeks information about a conference change for a specific sports team over a period, and the temp_memory includes several follow-up inquiries but lacks a clear path to the answer.",
+    "summary": "The question asks about the conference the Vermont Catamounts men's soccer team was in from 1988 to 1996, which had a different name. The temp_memory contained multiple follow-up questions but failed to narrow down the search effectively.",
+    "thinking": "The reflection process failed to correctly judge sufficiency and continued with unnecessary retrieval attempts. The generated follow-up queries were still broad and repetitive."
+  },
+  {
+    "condition": "question:The Vermont Catamounts men's soccer team currently competes in a conference that was formerly known as what from 1988 to 1996? temp_memory:The Vermont Catamounts men's soccer team competes in the America East Conference. The America East Conference was formerly known as the Atlantic East Conference from 1988 to 1996.",
+    "experience": "IF <temp_memory contains historical conference information relevant to a query about a specific time period>, AND <temp_memory does not provide direct answers to the query>, THEN (enough = false + generate a detailed new_request focusing on the requested historical conference information)",
+    "module": "Reflection",
+    "situation": "A query seeks historical conference information for a specific period. The temp_memory already holds the current conference affiliation and its predecessor during a certain time frame.",
+    "summary": "The question asks about the former conference name for the Vermont Catamounts men's soccer team from 1988 to 1996. The temp_memory contains that the team competes in the America East Conference, which was formerly known as the Atlantic East Conference.",
+    "thinking": "The reflection correctly identified that the current information was insufficient to fully answer the question. However, the follow-up queries generated were not as targeted as they could have been, leading to redundant and unnecessary requests."
+  },
+  {
+    "condition": "question:Roger O. Egeberg was Assistant Secretary for Health and Scientific Affairs during the administration of a president that served during what years? temp_memory:Roger O. Egeberg was Assistant Secretary for Health and Scientific Affairs during the Nixon administration of President Richard Nixon, which lasted from 1969 to 1974.",
+    "experience": "IF <QUERY_ABOUT_AN_ASSISTANT_SECRETARY_POSITION_DURING_A_PRESIDENTIAL_ADMINISTRATION> AND <TEMP_MEMORY_CONTAINS_THE_SPECIFIC_PRESIDENT_NAME_AND_THE_ASSISTANT_SECRETARY_POSITION> THEN <IF THE TEMP_MEMORY ALREADY CONTAINS THE YEARS_OF_ADMINISTRATION THEN ENOUGH = TRUE ELSE GENERATE A NEW_REQUEST TO RETRIEVE THE YEARS_OF_ADMINISTRATION>",
+    "module": "Reflection",
+    "situation": "A query seeks information about the years of a specific president's administration where a particular individual held a specific position.",
+    "summary": "The question asked about the years of President Richard Nixon's administration during which Roger O. Egeberg served as Assistant Secretary for Health and Scientific Affairs.",
+    "thinking": "The reflection process correctly judged the gathered information as sufficient to answer the question, but there was no indication of the system stopping too early or too late. The new_request field was correctly set to `None`, indicating no additional retrieval was needed. The completeness of the answer was correctly recognized."
+  },
+  {
+    "condition": "question:Which writer was from England, Henry Roth or Robert Erskine Childers? temp_memory:Henry Roth was an American novelist and short story writer, while Robert Erskine Childers was an Irish writer.",
+    "experience": "IF <A query asks about the nationality of multiple individuals and the temp_memory already contains relevant information for some individuals> THEN (enough = true) OR (enough = false + generate a new_request focusing on verifying the nationality of the remaining individuals)",
+    "module": "Reflection",
+    "situation": "A query asks about the nationality of two writers (Henry Roth and Robert Erskine Childers). The temp_memory already has information about their nationalities.",
+    "summary": "The user asked which writer was from England, Henry Roth or Robert Erskine Childers. The temp_memory contained information about Henry Roth being an American novelist and Robert Erskine Childers being an Irish writer.",
+    "thinking": "The reflection correctly identified that the current information was insufficient. However, it generated a list of follow-up questions that included redundant information and were too broad."
+  },
+  {
+    "condition": "question:Which writer was from England, Henry Roth or Robert Erskine Childers? temp_memory:Henry Roth was an American novelist and short story writer, while Robert Erskine Childers was an Irish writer.",
+    "experience": "IF <temp_memory contains information relevant to the main question but lacks necessary details for a complete answer> THEN (enough = false + generate a detailed new_request focusing on the missing details)",
+    "module": "Reflection",
+    "situation": "A query is made about the nationality of writers, and the temp_memory already holds information about their nationalities.",
+    "summary": "The question asks which writer was from England, Henry Roth or Robert Erskine Childers. The temp_memory already contains information about Henry Roth being an American novelist and Robert Erskine Childers being an Irish writer.",
+    "thinking": "The reflection correctly diagnosed the insufficiency of the current knowledge but failed to identify the redundancy in the follow-up queries. It stopped early and generated unnecessary follow-ups."
+  },
+  {
+    "condition": "question:Which writer was from England, Henry Roth or Robert Erskine Childers? temp_memory:Henry Roth was an American novelist and short story writer, while Robert Erskine Childers was an Irish writer.",
+    "experience": "IF <temp_memory contains information about one writer but not the nationality of another writer> THEN {'enough': False, 'new_request': 'What is the nationality of the second writer?'}",
+    "module": "Reflection",
+    "situation": "A query is made about the nationality of two writers, where the existing temp_memory contains partial information about one writer.",
+    "summary": "The user asked which writer was from England, Henry Roth or Robert Erskine Childers? The temp_memory provided information about Henry Roth being an American novelist but did not specify the nationality of Robert Erskine Childers.",
+    "thinking": "The reflection correctly identified that the current information is insufficient and generated relevant follow-up requests. However, the follow-up queries were overly broad and included irrelevant details."
+  }
+]

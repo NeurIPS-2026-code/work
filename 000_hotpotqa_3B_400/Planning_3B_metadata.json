@@ -1,0 +1,104 @@
+[
+  {
+    "condition": "2014 S/S is the debut album of a South Korean boy group that was formed by who?",
+    "situation": "multi_hop",
+    "summary": "This trace addresses a multi-hop query focusing on identifying the formation date and forming entity of a South Korean boy group that released the 2014 S/S album. The plan includes keyword, vector, and page_index tools to address the various aspects of the question.",
+    "experience": "IF A question requires the identification of a time-related entity and its formation entity from a specific album release THEN Construct info_needs to cover both the formation date and the entity, select vector queries for semantic matching, and use keyword for exact match when necessary."
+  },
+  {
+    "condition": "What screenwriter with credits for \"Evolution\" co-wrote a film starring Nicolas Cage and Téa Leoni?",
+    "situation": "multi_hop",
+    "summary": "The trace deals with a multi-entity query about a screenwriter, a film title, and the relationship to another film. The plan includes refining keyword collection to avoid redundancy while maintaining comprehensive coverage.",
+    "experience": "IF A question involves identifying a screenwriter who worked on a film alongside other actors AND requires linking this to a specific film title AND involves a known film series THEN THE PLANNER SHOULD SELECT EXACT-MATCH KEYWORDS TO IDENTIFY THE SCREENWRITER AND FOCUS ON VECTOR QUERIES TO FIND THE FILM TITLE AND RELATIONSHIP"
+  },
+  {
+    "condition": "What specific adventure or scenario is mentioned in 'Tunnels and Trolls' as an example? Is there a particular adventure or scenario within 'Tunnels and Trolls' that is commonly referred to by a specific name? What is the name given to the adventure or scenario in 'Tunnels and Trolls' that is often highlighted in discussions about the game? In 'Tunnels and Trolls', is there a common term used to describe a specific adventure or scenario that players frequently encounter? What is the name of the adventure or scenario in 'Tunnels and Trolls' that is described in detail in the game's rules or examples?",
+    "situation": "multi_hop",
+    "summary": "This trace addresses a multi-hop query about identifying a specific adventure scenario in 'Tunnels and Trolls' and its common terminology. The plan includes comprehensive info_needs and appropriate tools.",
+    "experience": "IF A question seeks to identify a specific entity or scenario within a specific work and its common terms THEN Construct a plan with multiple info_needs covering various aspects of the entity, select appropriate tools, and ensure comprehensive yet efficient coverage."
+  },
+  {
+    "condition": "What is the name of the adventure module in 'Tunnels and Trolls'? Who developed the adventure module 'Arena of Khazan' for 'Tunnels and Trolls'? On which platforms was the adventure module 'Arena of Khazan' available? When was the adventure module 'Arena of Khazan' released for the PC platform?",
+    "situation": "multi_hop",
+    "summary": "The trace addresses a multi-hop query about an adventure module in Tunnels and Trolls, identifying its name, developer, availability on different platforms, and its release date for the PC platform.",
+    "experience": "IF A question in the form of 'What is the name of the X in Y? Who/what is the Z of the X for Y? Where/which was the X available? When was the X released for Z?' THEN Construct info_needs for the name, creator, availability, and release date of the X in Y."
+  },
+  {
+    "condition": "When was Poison's album \"Shut Up, Make Love\" released?",
+    "situation": "Time-related query",
+    "summary": "The user asks about the release date of Poison's album 'Shut Up, Make Love'. The planning stage determines the need for the release date and selects appropriate keyword and vector queries to retrieve the information efficiently.",
+    "experience": "IF A user's question involves retrieving a specific release date or similar temporal information about an entity (artist/album) THEN SELECT concise keyword and vector queries to directly target the temporal fact."
+  },
+  {
+    "condition": "What specific organization did Eneasul Fateh work with as an international management consultant? When did Eneasul Fateh start his career as a management consultant? What notable achievements or projects did Eneasul Fateh undertake during his time as a management consultant? What is the role of Eneasul Fateh's stage name 'Aladin' in his professional life? How does Eneasul Fateh's background as a cultural practitioner influence his consulting work?",
+    "situation": "multi_hop",
+    "summary": "This trace addresses multiple aspects of Eneasul Fateh's career and background, attempting to gather information about his organizations, career start, achievements, roles, and cultural influences, but lacks clarity and focuses too broadly.",
+    "experience": "IF A single query spans multiple specific aspects of a person's professional and personal life (e.g., career history, achievements, cultural influence) THEN Break down the query into distinct, focused sub-queries targeting specific information needs."
+  },
+  {
+    "condition": "What specific organization did Eneasul Fateh serve as an international management consultant for? In which year did Eneasul Fateh transition from being an international management consultant to his role as a cultural practitioner? What notable work or project did Eneasul Fateh undertake as a cultural practitioner after leaving consulting? How does Eneasul Fateh's background in consulting influence his role as a cultural practitioner and live artist? What role did Eneasul Fateh play in the 2006 video game Bully, and how did he contribute to its development?",
+    "situation": "multi_hop",
+    "summary": "This trace attempts to answer multiple broad questions about Eneasul Fateh's career transitions and roles, but fails to narrow down the scope to specific entities like Aladin and his consulting work.",
+    "experience": "IF the question involves multiple-step inquiries about career progression and role changes involving specific individuals or entities THEN refine the info_needs to focus on specific entities and time periods, and ensure each query is distinct and targeted."
+  },
+  {
+    "condition": "The arena where the Lewiston Maineiacs played their home games can seat how many people?",
+    "situation": "single_fact",
+    "summary": "The plan correctly identifies the two primary pieces of information needed to answer the question about the Lewiston Maineiacs' home stadium's capacity, using keyword and vector queries, and avoids unnecessary page indexing.",
+    "experience": "IF A question asks for a specific factual detail about a named entity (in this case, the seating capacity of a stadium) THEN Use keyword queries to find exact matches and vector queries to retrieve conceptually related information"
+  },
+  {
+    "condition": "Which other Mexican Formula One race car driver has held the podium besides the Force India driver born in 1990?",
+    "situation": "list/set",
+    "summary": "The trace attempts to identify Mexican Formula One race car drivers born in 1990 and their podium finishes, but it includes an irrelevant entity and redundant information.",
+    "experience": "IF the question asks for a list/set of specific entities (in this case, Mexican Formula One drivers) with certain attributes (born in 1990 and podium finishes) THEN refine the info_needs to only include the specific Mexican drivers and their relevant podium finishes, and select vector queries to retrieve semantically related information."
+  },
+  {
+    "condition": "What Mexican Formula One race car driver besides the Force India driver born in 1990 has finished on the podium? When did Sergio Pérez last finish on the podium in a Mexican Formula One race? What is the name of the Mexican Formula One race where Sergio Pérez finished on the podium? How many times has Sergio Pérez finished on the podium in his career? What is the nationality of the Mexican Formula One race car driver who finished on the podium besides the Force India driver born in 1990?",
+    "situation": "multi_hop",
+    "summary": "This trace attempts to gather information about a Mexican Formula One race car driver other than Sergio Pérez who was born in 1990, when he last finished on the podium in a Mexican race, and the number of times he has finished on the podium in his career. It also seeks the nationality of another Mexican driver who has finished on the podium. The plan incorrectly includes Sergio Pérez's details and uses broad, non-specific queries.",
+    "experience": "IF A question asks for specific details about a particular person in a specific context (e.g., a Mexican Formula One race car driver born in 1990) AND the response requires multiple hops across different data sources THEN the info_needs should be narrowed down to only those directly related to the core person and specific events, and the tool selection should be focused on precise keyword or vector queries to target the exact information needed."
+  },
+  {
+    "condition": "What specific desktop and portable Macintosh computers were the Apple Remote compatible with? Which version of the Apple TV did the Apple Remote get replaced by? Was the Apple Remote designed to control any specific television model? What year was the Pochampally Saree first produced? What year did the 2017 FIFA Women's World Cup take place?",
+    "situation": "multi_entity",
+    "summary": "This trace involves a multi-entity query about compatibility of Apple Remote with different Macintosh models, replacement of Apple Remote with Apple TV, design aspects, and historical years of products. The plan was fragmented and included irrelevant topics.",
+    "experience": "IF The question asks for multiple specific pieces of information (e.g., compatibility, replacement, design features, historical dates) THEN The info_needs should be clearly defined and directly linked to the original question, avoiding tangential topics and ensuring each query focuses on a distinct aspect."
+  },
+  {
+    "condition": "What specific desktop and portable Macintosh computers were compatible with the Apple Remote? Which later versions of Apple TV replaced the Apple Remote? Was the Apple Remote designed to control any other media programs besides Front Row? Is there any mention of the Apple Remote being used with any non-Mac devices? Can you provide details on when the Apple Remote was discontinued?",
+    "situation": "multi_hop",
+    "summary": "The user asked about specific Apple Remote compatibilities, replacements, features, and discontinuation details. The plan attempted to address these with diverse tools but lacks focus and redundancy.",
+    "experience": "IF A multi-hop query involves multiple specific pieces of information that require separate queries AND the initial plan is too broad and uses multiple tools without clear separation THEN Use DISTINCT info_needs for each specific aspect of the question and select appropriate tools for each, ensuring clarity and efficiency."
+  },
+  {
+    "condition": "What was the name of the United States Vice President during Nelson Rockefeller's term? Which United States Vice President was serving during Nelson Rockefeller's Committee on the Employment of Minority Groups in the News Media? Who was the United States Vice President when Nelson Rockefeller led the Committee on the Employment of Minority Groups in the News Media? What was the title of the United States Vice President who supported Nelson Rockefeller's Committee on the Employment of Minority Groups in the News Media?",
+    "situation": "multi_hop",
+    "summary": "This trace asks for information about a United States Vice President during a specific committee formed by Nelson Rockefeller. The plan includes no info_needs or tools, leading to redundant and unclear queries.",
+    "experience": "IF the QUESTION involves multiple hops (queries) about the same historical event or person with slight variations in phrasing THEN explicitly define the info_needs and use vector_queries to retrieve conceptually related information."
+  },
+  {
+    "condition": "What is the name of the fight song of the university whose main campus is in Lawrence, Kansas and whose branch campuses are in the Kansas City metropolitan area?",
+    "situation": "multi_hop",
+    "summary": "This trace successfully plans out the necessary steps to answer the question by identifying four distinct info_needs and selecting the right tools: keyword, vector, and page_index.",
+    "experience": "IF A question requires the identification of multiple entities and their associated attributes, THEN construct an info_needs list that includes each entity and attribute and select vector queries that capture the semantic relationships between these entities."
+  },
+  {
+    "condition": "The Vermont Catamounts men's soccer team currently competes in a conference that was formerly known as what from 1988 to 1996?",
+    "situation": "Time-related query",
+    "summary": "The question asks for the name of a conference that the Vermont Catamounts men's soccer team used from 1988 to 1996. The plan involves identifying the relevant conference name within the specified time frame using keyword-based methods.",
+    "experience": "IF The question is seeking a specific entity over a defined time period THEN Construct a singular info_need focusing on the specific time range and select vector queries for more precise semantic matching."
+  },
+  {
+    "condition": "What conference did the Vermont Catamounts men's soccer team compete in from 1988 to 1996? In what years did the Vermont Catamounts men's soccer team participate in the conference that was formerly known from 1988 to 1996? What conference was the predecessor of the current conference that the Vermont Catamounts men's soccer team competes in from 1988 to 1996? From 1988 to 1996, what conference name preceded the current conference that the Vermont Catamounts men's soccer team participates in? What conference did the Vermont Catamounts men's soccer team play in during the time period when the conference they now compete in was known as [former conference name]?",
+    "situation": "Time-related query focusing on a specific historical timeframe with multiple related facts.",
+    "summary": "The plan attempts to gather information about conferences and their predecessors for the period 1988-1996, but it includes overlapping and unnecessary questions, leading to inefficiency and redundancy.",
+    "experience": "IF A historical query spans multiple time periods and requires information about predecessors and current entities THEN Focus on forming distinct info_needs for each specific time frame and entity, and select tools that can efficiently handle temporal and hierarchical relationships."
+  },
+  {
+    "condition": "Roger O. Egeberg was Assistant Secretary for Health and Scientific Affairs during the administration of a president that served during what years?",
+    "situation": "time-related query",
+    "summary": "The plan correctly identifies the information needs required to answer the question about Roger O. Egeberg's presidency years and selects the appropriate tools. However, there is some redundancy in the info_needs section.",
+    "experience": "IF a question requires information about when a person held a specific position during a particular presidency THEN prioritize constructing an info_need for 'the years of presidency during which the person served as the position' and select 'vector' queries for semantic matching"
+  }
+]
