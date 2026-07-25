@@ -1,2 +1,14 @@
 /NAS/wangxy/BAAI/bge-m3
 /NAS/wangxy/qwen2.5-3B-Instruct
+
+
+(base) wangxy@Tang1:/NAS/wangxy$ cd /NAS/wangxy/rebuttal
+(base) wangxy@Tang1:/NAS/wangxy/rebuttal$ ls
+cross_dataset_validation  hotpotqa  locomo
+(base) wangxy@Tang1:/NAS/wangxy/rebuttal$ cd hotpotqa
+(base) wangxy@Tang1:/NAS/wangxy/rebuttal/hotpotqa$ ls
+eval_1600.json  eval_3200.json  eval_400.json
+(base) wangxy@Tang1:/NAS/wangxy/rebuttal/hotpotqa$ cd ..
+(base) wangxy@Tang1:/NAS/wangxy/rebuttal$ cd locomo
+(base) wangxy@Tang1:/NAS/wangxy/rebuttal/locomo$ ls
+locomo10.json
