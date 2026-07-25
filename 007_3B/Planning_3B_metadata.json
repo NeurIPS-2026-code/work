@@ -1,0 +1,584 @@
+[
+  {
+    "condition": "When did Caroline go to the LGBTQ support group?",
+    "situation": "Time-related query",
+    "summary": "This trace attempts to answer when Caroline attended an LGBTQ support group by identifying specific details about the event and its attendees, but the plan includes unnecessary elements and uses broad tools.",
+    "experience": "IF The question involves a specific time-related event and requires precise date information THEN Use concise keyword matching or direct page indexing to retrieve the specific date of the event."
+  },
+  {
+    "condition": "When did Melanie paint a sunrise?",
+    "situation": "Time-related query",
+    "summary": "This trace attempts to answer when Melanie painted a sunrise by generating multiple info_needs that are not directly relevant to the question, leading to an inefficient and redundant retrieval plan.",
+    "experience": "IF A question asks for a specific event time (e.g., when something happened) THEN focus on constructing info_needs that directly address the timing aspect of the question, avoiding unrelated sub-questions or concepts."
+  },
+  {
+    "condition": "What specific year did Caroline have a picture taken with her friends and mentors? In which session did Caroline mention having a photo taken with her friends and mentors four years ago? How many times has Caroline met up with her friends, family, and mentors according to the available sessions? What is the date of the last session where Caroline mentioned having a photo taken with her friends and mentors? In which session did Caroline mention having a photo taken with her friends and mentors last week?",
+    "situation": "multi_hop",
+    "summary": "This trace addresses a multi-hop time-related query, asking for various details about specific sessions and events involving Caroline. The plan includes detailed info_needs and tool selections, though redundant queries can be streamlined.",
+    "experience": "IF A question asks for multiple specific details about past events involving multiple participants over time THEN THEN Construct distinct info_needs for each specific detail while merging sessions and dates when possible to reduce redundancy"
+  },
+  {
+    "condition": "What specific date was the photo taken with friends and mentors from four years ago? How many times did Caroline meet with her friends, family, and mentors in total? In which session did Caroline mention taking a photo with her friends and mentors last week? What is the exact date of the photo taken with friends and mentors in SESSION 15? How many months have passed between the photo taken in SESSION 2 and the one mentioned in SESSION 15?",
+    "situation": "multi_hop",
+    "summary": "This trace addresses a complex query involving multiple entities and time-related information. The plan includes 5 info_needs and uses three different retrieval tools, aiming to gather data on specific dates, session mentions, and meeting frequencies.",
+    "experience": "IF A question involves multiple hops across different entities and time periods THEN SELECT info_needs that cover the specific facts needed AND USE a combination of keyword, vector, and page_index tools to efficiently retrieve the required data"
+  },
+  {
+    "condition": "What is the exact date Caroline joined the LGBTQ activism group 'Connected LGBTQ Activists'? How many months has Caroline been mentoring the transgender teen in the group? When is the planned LGBTQ art show that Caroline is involved in? What is its schedule? Is there any additional information about Caroline's involvement in the LGBTQ community before joining 'Connected LGBTQ Activators'? How often does Caroline organize events related to LGBTQ issues?",
+    "situation": "multi_hop",
+    "summary": "The trace attempts to answer several related but distinct questions about Caroline's involvement in the LGBTQ community, including her joining date, mentoring duration, involvement in an art show, and event frequency. However, the plan fails to identify these as separate, distinct queries and instead presents them as redundant.",
+    "experience": "IF A question involves multiple hops of information (e.g., different aspects of a person's involvement in an organization) THEN Develop info_needs for each hop and select appropriate tools to efficiently retrieve the specific details needed for each."
+  },
+  {
+    "condition": "What is the exact date Caroline joined the LGBTQ activism group 'Connected LGBTQ Activists'? How many months has Caroline been mentoring the transgender teen in the group? Can you provide a specific start date for this mentoring role? When is the planned LGBTQ art show that Caroline is involved in, and how long has she been organizing it? Can you find out the duration of Caroline's involvement in the LGBTQ activism group 'Connected LGBTQ Activists' as of today? What is the last date mentioned in the result where Caroline's activities with the LGBTQ activism group are specified?",
+    "situation": "multi_hop",
+    "summary": "This trace involves a multi-hop query about Caroline's involvement in the LGBTQ activism group 'Connected LGBTQ Activists'. The plan identifies multiple specific info_needs and selects appropriate tools to address each one.",
+    "experience": "IF a question requires detailed information about a person's involvement in a specific group over time, THEN construct a retrieval plan that includes keyword searches for group-specific terms, vector queries for broader context, and page index scans for precise dates and milestones."
+  },
+  {
+    "condition": "What specific beach did Melanie's family camp at in SESSION 8? How many times has Melanie camped with her family according to the sessions provided? In which session did Melanie discuss planning the LGBTQ art show? What activities did Melanie's family engage in during their beach camping trip in SESSION 8? Does Melanie have any other camping experiences mentioned in the sessions?",
+    "situation": "multi_hop",
+    "summary": "This trace attempts to answer multiple questions about different aspects of the sessions, but the primary question was unclear and the plan lacks specificity.",
+    "experience": "IF A question about specific events or locations in past sessions does not clearly identify the core information needed THEN narrow down the main sub-question and focus on retrieving the specific event or location."
+  },
+  {
+    "condition": "What specific location did Melanie's family camp at in SESSION 8? In which session did Melanie discuss planning the LGBTQ art show involving her family? What is the exact date or timeframe mentioned in SESSION 15 when Melanie's family was camping at the beach? How many times has Melanie camped with her family according to the provided sessions? In SESSION 15, what other activities besides camping does Melanie mention her family engaging in?",
+    "situation": "multi_hop",
+    "summary": "The user asked multiple related but distinct questions about different aspects of Melanie's family activities, including camping locations, discussions about the LGBTQ art show, and other activities during specific sessions. The provided plan fails to address any of these queries.",
+    "experience": "IF a question involves multiple related but distinct pieces of information spread across different sessions or topics THEN generate info_needs for each piece of information and select appropriate tools (keyword_collection) to retrieve them efficiently."
+  },
+  {
+    "condition": "What specific date was mentioned regarding Caroline attending the LGBTQ conference? Could you provide the exact day of the week when Caroline attended the LGBTQ conference? In the conversation, what did Caroline specifically say about feeling accepted at the conference? How many days prior to the event did Caroline attend the LGBTQ conference? Who else was mentioned in the conversation Caroline had about the LGBTQ conference?",
+    "situation": "multi_hop",
+    "summary": "The user seeks detailed information about Caroline's attendance at a LGBTQ conference, including the specific date, day of the week, her comments on feeling accepted, the proximity to the event, and who else was involved in the conversation. The plan breaks down the question into several sub-questions and uses various retrieval strategies to address them.",
+    "experience": "IF the question involves multiple steps of inquiry (e.g., seeking specific dates, days of the week, and other related information) THEN construct a plan with a set of info_needs covering each step and select appropriate tools to efficiently retrieve the required information."
+  },
+  {
+    "condition": "When did Melanie read the book \"nothing is impossible\"?",
+    "situation": "Time-related query",
+    "summary": "The user asked about the reading date of a specific book by Melanie. The plan attempted to gather information through keyword and vector queries, but it included extraneous questions like recommending books to Caroline and encouraging career goals, which are not pertinent to the main query.",
+    "experience": "IF <QUESTION relates to a specific event or time period> AND <SUB-QUESTIONS introduced are not directly related to the core query> THEN <RETRIEVE_ONLY_CORE_INFO_NEEDS_AND_USE_CORRESPONDING_TOOLS>"
+  },
+  {
+    "condition": "What specific actions has Melanie taken to advocate for the LGBTQ+ community? Has Melanie ever received any awards or recognition for her contributions to the LGBTQ+ community? Are there any records of Melanie's involvement in LGBTQ+ advocacy beyond participating in events and volunteering? Does Melanie have any documented publications or artistic works related to LGBTQ+ issues? Can you provide details on any LGBTQ+ organizations Melanie has been involved with?",
+    "situation": "multi_hop",
+    "summary": "This trace involves a multi-hop query about Melanie's actions, awards, publications, and organizational involvement with the LGBTQ+ community. The plan includes detailed info_needs and uses a combination of keyword and vector queries to cover these aspects.",
+    "experience": "IF A question inquires about a person's multifaceted contributions to a specific community (e.g., LGBTQ+) across various activities and achievements THEN Construct info_needs that encompass multiple dimensions of their involvement (e.g., actions, awards, publications, organizations) and select tools that can efficiently retrieve relevant data (e.g., keyword for direct terms, vector for broader context)"
+  },
+  {
+    "condition": "What specific date did Caroline attend the pride parade? How many weeks before the session on 14 August, 2023, was Caroline's pride parade? What was the location of the pride parade Caroline attended? Was Caroline the only person from the session who attended the pride parade? How did Caroline describe her experience at the pride parade?",
+    "situation": "multi_hop",
+    "summary": "The trace attempts to answer multiple specific questions about Caroline's attendance at a pride parade but lacks new information needs and fails to select appropriate tools.",
+    "experience": "IF the question involves multiple hops of information (e.g., dates, locations, and experiences) AND contains redundant sub-queries that have already been addressed in previous searches THEN construct new info_needs that target specific, unaddressed aspects of the query and select tools that can efficiently retrieve these new pieces of information"
+  },
+  {
+    "condition": "What events has Caroline participated in to help children?",
+    "situation": "list/set",
+    "summary": "This trace attempts to find events Caroline has participated in to help children but includes topics unrelated to child assistance and lacks specificity.",
+    "experience": "IF the question asks for a list of specific events or activities related to helping children THEN refine the info_needs to only include those events and use a more targeted tool selection strategy focusing on event-related keywords."
+  },
+  {
+    "condition": "When did Melanie go camping in July?",
+    "situation": "Time-related query",
+    "summary": "The user asked when Melanie went camping in July. The initial plan included multiple unrelated queries and redundant info_needs, generating inefficiencies.",
+    "experience": "IF The question involves a specific time-related fact AND contains unrelated sub-questions THEN Focus on constructing info_needs that directly address the core time-related query without adding unrelated sub-questions."
+  },
+  {
+    "condition": "What specific beach did Melanie visit? What type of sunset painting did Melanie create? How has Melanie's art influenced her journey of self-discovery? Can you provide details on how Melanie copes with her transition through art? What other forms of art does Melanie create besides paintings?",
+    "situation": "multi_hop",
+    "summary": "This trace attempts to gather detailed information about Melanie's artistic activities and personal development but fails to focus on the main question, leading to inefficient and irrelevant queries.",
+    "experience": "IF the question asks for a multi-hop relationship between different aspects of a person's life (e.g., specific beach visit, artwork, personal journey) THEN refine the info_needs to cover the core aspects of the question without unnecessary details and select appropriate tools for efficient retrieval."
+  },
+  {
+    "condition": "What specific beach did Melanie visit for her recent painting? Can you provide details on the style or technique Melanie used in her recent painting? How has Melanie's art practice influenced her journey of self-discovery and acceptance? What kind of artwork has Melanie created before her recent sunset painting? Can you find out when Melanie's last sunset painting was based on her beach visit?",
+    "situation": "multi_hop",
+    "summary": "This trace attempts to address a multi-hop query about a person's recent beach visit, painting style, artistic influences, and previous works. However, the plan fails to identify the specific information needs and appropriate tools for each aspect.",
+    "experience": "IF the question involves multiple aspects that require different types of information and time-related details THEN construct a detailed info_needs list and select appropriate tools for each aspect"
+  },
+  {
+    "condition": "What specific pottery workshop did Melanie and Caroline attend? How many times have Melanie and Caroline participated in LGBTQ+ events and organizations? What kind of mural did Melanie and Caroline create to support Caroline's transition? How many homeless shelters have Melanie and Caroline visited with their families? What other art shows have Melanie and Caroline organized besides the LGBTQ art show?",
+    "situation": "multi_hop",
+    "summary": "The user asked a question about various activities involving Melanie and Caroline, including pottery workshops, LGBTQ+ events, murals, homeless shelters, and art shows. The provided plan has redundant queries and does not clearly differentiate between family-related and non-family-related activities.",
+    "experience": "IF The question involves a series of related but distinct topics (such as different types of events, activities, and creative endeavors) that require separate queries AND the response needs to be focused on specific instances rather than aggregated statistics THEN Refine the info_needs to focus on direct answers to each part of the question and adjust the tool selection to efficiently handle these specific queries."
+  },
+  {
+    "condition": "What specific pottery workshop did Melanie and Caroline attend? What LGBTQ+ event did Melanie and Caroline participate in as mentors? How many times have Melanie and Caroline visited the homeless shelter? What mural did Melanie and Caroline create as part of their support for Caroline's transition? In what year did Melanie and Caroline organize the LGBTQ art show?",
+    "situation": "multi_hop",
+    "summary": "This trace shows a question with multiple queries, each requiring different types of information (single entities, events, counts, and temporal data). The planning failed to identify these varied needs and thus lacks a comprehensive retrieval strategy.",
+    "experience": "IF the question contains multiple-hop queries involving various types of information (entities, events, counts, and dates) THEN construct a more detailed info_needs list and select appropriate tools for each type of query."
+  },
+  {
+    "condition": "What are Melanie's activities in 2023? Has Melanie visited the beach in 2023? How many times did Melanie visit the beach in 2023? Are there any records of Melanie's beach trips in 2023? What is the frequency of Melanie's beach visits in 2023?",
+    "situation": "Multi-hop time-related query",
+    "summary": "This trace deals with a multi-hop time-related query about Melanie's activities, beach visits, and frequency in 2023. The plan includes multiple info_needs and tools to address these aspects.",
+    "experience": "IF A question asks about activities, visits, and frequency of a person in a specific year AND the person has multiple records to consider THEN Construct comprehensive info_needs covering each aspect of the question and select appropriate tools to efficiently retrieve the required information."
+  },
+  {
+    "condition": "What specific dates does Melanie have planned for beach visits in 2023? Has Melanie made any reservations or plans to visit the beach in 2023? Are there any records of Melanie's travel plans mentioning a beach destination for 2023? Does Melanie have any social media posts or updates indicating beach visits in 2023? Is there any documentation showing Melanie's attendance at beach-related events in 2023?",
+    "situation": "multi_hop",
+    "summary": "The user seeks specific information about Melanie’s beach-related plans for 2023, including reservations, travel plans, social media posts, and event attendance. The plan includes keyword and vector queries tailored to these needs, but some queries might be too detailed.",
+    "experience": "IF A question asks for specific details about past or upcoming activities involving multiple entities (in this case, Melanie's beach-related plans) over a specified time period (2023), THEN prioritize concise, overlapping information needs and use a combination of keyword and vector queries to efficiently gather the required data."
+  },
+  {
+    "condition": "What specific LGBTQ activist group did Caroline join on June 13, 2023? On which date was Caroline previously involved in mentoring LGBTQ youth? What event did Caroline organize before joining the LGBTQ activist group? Who else, if anyone, was involved in organizing the LGBTQ art show with Caroline? How many LGBTQ youth were mentored by Caroline prior to her involvement in the activist group?",
+    "situation": "multi_hop",
+    "summary": "This trace attempts to answer multiple specific questions related to Caroline's involvement in the LGBTQ community but fails to clearly define the main query and includes irrelevant sub-questions.",
+    "experience": "IF the question involves multiple specific queries that are not directly related to each other and require separate answers THEN prioritize defining the main query and focus the info_needs and tools on obtaining the most relevant and concise information needed to address the primary question."
+  },
+  {
+    "condition": "What types of pottery have Melanie and her kids made?",
+    "situation": "list/set",
+    "summary": "The provided trace involves a question asking for a list of pottery types made by a person and their children. The plan is empty, indicating a failure to identify any specific information needs or retrieval strategies.",
+    "experience": "IF A question asks for a list or set of items created by multiple people THEN THEN identify specific entities (Melanie and her kids) and types of pottery, and formulate a keyword collection focusing on these entities and pottery types."
+  },
+  {
+    "condition": "What year did Caroline and Melanie attend the pride festival together? How many years ago did Caroline participate in the mentorship program for LGBTQ youth? What specific event was referred to as the 'pride parade' in the result? Who else attended the pride festival with Caroline and Melanie? How long did Caroline and Melanie stay at the pride festival?",
+    "situation": "multi_hop",
+    "summary": "The user seeks information about events attended by Caroline and Melanie, including the year they attended the pride festival together, the duration of their stay, and details about the 'pride parade.' The plan efficiently identifies these needs and uses a mix of keyword and vector queries.",
+    "experience": "IF A query involves multiple entities and requires information across different time periods or events THEN Use a combination of keyword and vector queries to address the query's multi-hop nature and ensure comprehensive coverage of the information needs."
+  },
+  {
+    "condition": "When did Caroline apply to adoption agencies?",
+    "situation": "Time-related query",
+    "summary": "This trace attempts to address a time-related query about when Caroline applied to adoption agencies, but includes irrelevant information and overlaps in its queries.",
+    "experience": "IF A question asks for a specific event date (such as when someone applied to adoption agencies) THEN focus on constructing a single, precise info_need that directly addresses the event date without seeking additional information (like agency names or outcomes)."
+  },
+  {
+    "condition": "What specific adoption agencies did Caroline apply to on 23 August, 2023? Who was present during Caroline's session with adoption agencies on 23 August, 2023? What was the outcome of Caroline's application to adoption agencies on 23 August, 2023? How many adoption agencies were Caroline applying to on 23 August, 2023? What was the date of Caroline's last visit to adoption agencies before 23 August, 2023?",
+    "situation": "multi_hop",
+    "summary": "This trace attempts to cover several aspects of Caroline’s adoption process on August 23, 2023, but the plan is overly detailed and lacks clarity in its focus.",
+    "experience": "IF A question asks about multiple related pieces of information that require sequential querying AND the original question has a clear temporal or entity focus THEN prioritize breaking down the question into distinct, non-overlapping info_needs and select the most efficient retrieval tools for each."
+  },
+  {
+    "condition": "When did Caroline draw a self-portrait?",
+    "situation": "Time-related query",
+    "summary": "The user asked about the year Caroline drew a self-portrait, but the plan included vector queries about general aspects of self-portraits and irrelevant location information.",
+    "experience": "IF a question asks for a specific date/time when an event occurred THEN prioritize concise keyword queries to directly target the date, avoiding irrelevant vector queries."
+  },
+  {
+    "condition": "What specific artwork has Caroline painted that includes a sunset? What specific artwork has Melanie painted that includes nature inspiration? Are there any other subjects Caroline or Melanie have painted besides sunset and nature? What pottery bowls has Melanie created as part of her artistic activities? Can you provide more details on the nature-inspired paintings created by Melanie?",
+    "situation": "multi_hop",
+    "summary": "The trace illustrates a multi-hop query asking about specific artworks by Caroline and Melanie that include particular themes (sunset and nature), as well as a request for pottery bowls and additional details about nature-inspired paintings. The plan fails to identify these shared subjects and does not effectively utilize tools like keyword or vector queries.",
+    "experience": "IF the question involves multiple hops between different entities and attributes, THEN prioritize identifying shared subjects and use precise information needs and targeted tool strategies."
+  },
+  {
+    "condition": "When did Caroline encounter people on a hike and have a negative experience?",
+    "situation": "Time-related query",
+    "summary": "The trace shows a plan to retrieve information about when Caroline had a negative experience during a hike, using keyword and vector queries to find relevant content.",
+    "experience": "IF A question asks about a specific event involving a person and a context (such as a hike), AND requires precise timing and context clues, THEN Use keyword and vector queries to identify the relevant time and contextual details."
+  },
+  {
+    "condition": "When did Melanie make a plate in pottery class?",
+    "situation": "Time-related query",
+    "summary": "This trace addresses a time-related query about a specific event (making a plate) in a particular context (pottery class). The plan includes two info_needs that are somewhat tangential to the main question.",
+    "experience": "IF <QUESTION contains a specific event and context> AND <RELEVANT FACTS TO THE EVENT ARE NOT DIRECTLY COVERED> THEN <REFINE INFO_NEEDS TO DIRECTLY ADDRESS THE TIME OF THE SPECIFIC EVENT>"
+  },
+  {
+    "condition": "What specific visit did Melanie take her kids to the park on? On which date did Melanie take her kids to the park? Who else was with Melanie when she took her kids to the park? Where exactly was the park located during Melanie's visit? How many times has Melanie taken her kids to the park this year?",
+    "situation": "multi_hop",
+    "summary": "This trace addresses a multi-hop query about specific visits to a park by Melanie, including dates, companions, location, and frequency of visits. The plan efficiently breaks down the question into clear sub-questions and selects appropriate tools for each.",
+    "experience": "IF A question involves multiple related pieces of information that require querying different types of data sources (e.g., exact dates, companions, locations) THEN SELECT info_needs that break down the question into discrete sub-questions and use a combination of keyword matching, vector-based semantic queries, and page index searches to retrieve the necessary information."
+  },
+  {
+    "condition": "When is Caroline's youth center putting on a talent show?",
+    "situation": "Time-related query",
+    "summary": "This trace involves a time-related query asking for the specific date when Caroline's youth center will have a talent show, with an inefficient plan that includes secondary, non-essential questions.",
+    "experience": "IF A time-related query contains secondary questions about the history or frequency of a recurring event rather than the specific occurrence date THEN prioritize direct retrieval strategies focusing solely on the specific date."
+  },
+  {
+    "condition": "What are some changes Caroline has faced during her transition journey?",
+    "situation": "multi_hop",
+    "summary": "The user's plan aimed to address various aspects of Caroline's transition journey through her experiences, plans, and impacts, but the info_needs were too broad and included redundant queries.",
+    "experience": "IF The question asks for a detailed understanding of changes a person has experienced over time AND the response involves multiple layers of information that require sequential querying THEN Refine the info_needs to include specific, non-overlapping queries targeting each layer of information."
+  },
+  {
+    "condition": "What specific activities do Melanie's children engage in during hikes? How many times per year does Melanie organize hiking and camping trips with her family? Does Melanie's family include any pets that accompany them on hikes and camping trips? What types of pottery and painting projects does Melanie typically involve her family in during hikes? Are there any particular mountain ranges or forest areas where Melanie's family frequently goes on hikes?",
+    "situation": "multi_hop",
+    "summary": "This trace attempts to gather detailed information about Melanie's family's activities during hikes, camping trips, and other outdoor events. However, the plan includes redundant sub-questions and fails to clearly identify the core activities.",
+    "experience": "IF A retrieval plan includes multiple sub-questions that are redundant or cover the same ground as the main question THEN prioritize the main question and its direct answers over unnecessary sub-questions."
+  },
+  {
+    "condition": "What specific activities does Melanie organize during family hikes? How often does Melanie plan family hiking trips with her family? Does Melanie involve her children in planning and organizing hikes? What type of pottery or painting projects does Melanie engage in with her family during hikes? Are there any particular mountain or forest locations where Melanie and her family frequently go on hikes?",
+    "situation": "multi_hop",
+    "summary": "The user asked about specific activities Melanie organizes during family hikes, the frequency of these trips, and whether she involves her children in planning. The plan generated too many questions, some of which are redundant.",
+    "experience": "IF The question is a multi-hop query that requires detailed information about specific activities and their frequency, THEN refine the info_needs to focus on direct answers to these core aspects without unnecessary sub-questions."
+  },
+  {
+    "condition": "How long has Melanie been practicing art?",
+    "situation": "Time-related query",
+    "summary": "This trace attempts to answer how long Melanie has been practicing art by querying various aspects of her art practice, including types of art and frequency, which are not relevant to the core question.",
+    "experience": "IF the question asks for a duration or time period of an activity without specifying the particular entity or type of activity, THEN refine the info_needs to focus solely on the time aspect and avoid including non-relevant details."
+  },
+  {
+    "condition": "What specific pottery class did Melanie attend? When did Melanie make the pottery creation mentioned in SESSION 15? Can you find out the year Melanie started practicing pottery? Is there any mention of when Melanie last practiced pottery besides SESSION 13 and SESSION 15? What other types of art does Melanie practice aside from pottery?",
+    "situation": "multi_hop",
+    "summary": "This trace involves multiple complex queries about different aspects of Melanie's pottery practice, including classes attended, creation dates, starting years, and other artistic practices. The initial plan failed to identify these needs, leaving the info_needs and tools fields empty.",
+    "experience": "IF a question involves multiple interrelated facts that require sequential querying (e.g., asking about past events, origins, and related activities) THEN construct a retrieval plan that includes multi-step queries targeting each fact separately, ensuring clear info_needs and appropriate tool selections."
+  },
+  {
+    "condition": "What transgender-specific events has Caroline attended?",
+    "situation": "multi_hop",
+    "summary": "The user asked about transgender-specific events Caroline has attended, but the planning step provided no actionable information needs or tools.",
+    "experience": "IF a question involves multiple hops of information where specific entities or their connections need to be identified THEN construct explicit info_needs to identify key individuals (Caroline) and events (transgender-specific events), and select appropriate tools such as keyword searches and possibly vector-based queries to find relevant pages."
+  },
+  {
+    "condition": "When did Melanie get hurt?",
+    "situation": "Time-related query",
+    "summary": "The trace involves a time-related query asking about the timing of an incident involving Melanie. The planning process attempts to gather information about Melanie’s activities and events alongside the core question, leading to inefficiency and redundancy.",
+    "experience": "IF A question asks for a specific point in time regarding an event (single_fact, time-related query) THEN prioritize direct information needs related to the event timeline without introducing extraneous sub-queries."
+  },
+  {
+    "condition": "What specific event caused Melanie to get hurt during her pottery workshop? How old was Melanie when she participated in the pottery workshop where she got hurt? In which city or town did Melanie attend the pottery workshop where she got hurt? What were Melanie's injuries from the accident at the pottery workshop? Did Melanie receive any medical attention after the incident at the pottery workshop?",
+    "situation": "Time-related query",
+    "summary": "This trace involves a multi-hop time-related query focusing on a specific pottery workshop incident involving Melanie, including the event, age, location, injuries, and medical attention.",
+    "experience": "IF The question involves a specific event and related details from multiple stages of a single incident THEN Refine the info_needs to focus solely on the timeline and relevant details, avoiding non-chronological or unrelated information."
+  },
+  {
+    "condition": "What specific event during the pottery workshop caused Melanie's injury? How long ago did Melanie's injury occur in relation to the pottery workshop? What were the circumstances leading up to Melanie's decision to participate in the pottery workshop? Did Melanie have any previous injuries related to pottery before this incident? What other activities or hobbies does Melanie engage in besides pottery?",
+    "situation": "Time-related query and multi-hop query",
+    "summary": "The plan attempts to gather information about the specific event causing Melanie's injury, the duration since the injury, the circumstances of her decision to participate in the pottery workshop, whether she had previous pottery-related injuries, and other activities she enjoys outside pottery. However, it includes non-relevant details and lacks clarity.",
+    "experience": "IF The question involves multiple steps of temporal and event-based information gathering THEN Refine the info_needs to focus solely on the specific events and timeframes relevant to the timeline of the incident."
+  },
+  {
+    "condition": "What items has Melanie bought?",
+    "situation": "list/set",
+    "summary": "The trace attempts to answer what items Melanie has bought but includes unrelated queries and redundant tools, leading to a poorly structured retrieval plan.",
+    "experience": "IF the question asks about a list of items purchased by a specific person THEN the info_needs should focus solely on the items bought without including other unrelated details and the tool selection should be optimized to directly retrieve the items bought."
+  },
+  {
+    "condition": "What specific items did Melanie purchase during pottery workshops? Has Melanie made any purchases related to painting sessions? What items has Melanie considered adopting through the charity race for mental health? Does Melanie have any plans to buy items for future creative projects? What types of items has Melanie expressed interest in adopting?",
+    "situation": "multi_hop",
+    "summary": "The user seeks detailed information about specific purchases Melanie made during pottery workshops, painting sessions, and future creative projects, along with her interests in adopting items through a charity race. The initial plan aimed to gather this information but lacked clarity and focus.",
+    "experience": "IF <QUESTION> relates to a series of specific actions or decisions made by an entity over time, and <MEMORY> contains scattered information about these actions without a clear path to retrieve them THEN refine <INFO_NEEDS> to explicitly ask for the most recent or relevant actions, and select <TOOLS> that can efficiently navigate through the memory to find the needed information."
+  },
+  {
+    "condition": "What specific pottery items has Melanie purchased? What types of paintings has Melanie acquired? Has Melanie made any purchases related to creativity tools or supplies? What art materials has Melanie bought for her children's creative projects? Are there any records of Melanie's purchases related to adoption-related activities?",
+    "situation": "multi_hop",
+    "summary": "The original plan attempts to address multiple, non-specific aspects of Melanie's purchases but lacks clarity and specificity, resulting in an ineffective retrieval strategy.",
+    "experience": "IF The question involves multiple hops of information retrieval and contains a mix of specific and general aspects THEN Refine the info_needs to focus on specific product categories and eliminate irrelevant events."
+  },
+  {
+    "condition": "What specific date was Caroline's adoption interview scheduled and completed? In which week of October 2023 did Caroline complete her adoption interview? What was the exact date Caroline passed her adoption interview? Where and when did Caroline attend her adoption interview? How many days before or after the 22nd of October 2023 did Caroline pass her adoption interview?",
+    "situation": "multi_hop",
+    "summary": "This trace asks for multiple specific dates and times related to Caroline's adoption interview but lacks a clear plan to retrieve the necessary information.",
+    "experience": "IF <multi-hop time-related query> THEN <use structured search strategies to identify relevant pages and extract specific dates>"
+  },
+  {
+    "condition": "What specific mental health issues was Melanie's charity race raising awareness for? How much money did Melanie's charity race raise? What other initiatives does Melanie have in place to support the LGBTQ+ community? What types of art forms does Melanie engage in besides writing poetry and painting? What volunteer work does Caroline participate in to advocate for trans rights?",
+    "situation": "multi_hop",
+    "summary": "This trace addresses a multi-hop question about a charity race and Melanie's volunteer work, but the plan is inefficient and includes irrelevant aspects.",
+    "experience": "IF the question contains multiple hops between different entities or topics that require separate queries THEN prioritize creating more specific info_needs that directly address each hop without including unrelated details."
+  },
+  {
+    "condition": "What specific self-care activities does Melanie carve out on a daily basis? How does Melanie's decision to adopt a child relate to her self-care priorities? What career path is Melanie interested in pursuing and how does it connect to her self-care practices? In what ways does Melanie's involvement in counseling and mental health align with her self-care philosophy? What challenges might Melanie face in balancing her self-care practices with her role as a parent?",
+    "situation": "multi_hop",
+    "summary": "This trace focuses on a multi-hop query about various aspects of Melanie's life, including her self-care routines, adoption, career, and mental health. The plan attempts to address all these aspects but overcomplicates the plan by expanding into tangential areas.",
+    "experience": "IF The question involves multiple interconnected but distinct aspects of a person's life (such as self-care, adoption, career, and mental health) THEN Refine the info_needs to focus on core, interrelated aspects while avoiding tangential questions."
+  },
+  {
+    "condition": "What specific self-care activities does Melanie engage in daily? Does Melanie have any specific routines or rituals for her self-care activities? What motivated Melanie to pursue a career in counseling and mental health? Has Melanie completed any training or certifications related to her interest in counseling? How many children has Melanie adopted so far?",
+    "situation": "multi_hop",
+    "summary": "The user asks about specific self-care activities Melanie engages in daily, but the plan includes additional questions about career motivation and number of adopted children, leading to an inefficient retrieval plan.",
+    "experience": "IF the question involves a multi-hop reasoning where the answer requires following up on multiple steps or pieces of information, THEN refine the info_needs to only include the immediate core question and use a targeted tool selection strategy focusing on the most efficient paths to gather the necessary data."
+  },
+  {
+    "condition": "What are Caroline's plans for the summer?",
+    "situation": "Time-related query",
+    "summary": "The user asks about Caroline's summer plans, but the plan includes sub-questions about specific events or conferences, which are not relevant to the main query.",
+    "experience": "IF The question is about future plans or activities for a specific time period (e.g., summer) THEN The info_needs should focus on direct questions about the activities or events for that time period, avoiding irrelevant sub-questions."
+  },
+  {
+    "condition": "What specific aspects of the adoption agency's inclusivity made it appealing to Caroline? How does the adoption agency's support for LGBTQ+ individuals compare to other agencies in terms of resources and services? Can you provide examples of how the adoption agency has helped other LGBTQ+ individuals in the past? What criteria or processes does the adoption agency use to ensure inclusivity and support for LGBTQ+ individuals? Does the adoption agency have any unique programs or initiatives specifically designed for LGBTQ+ adoptive families?",
+    "situation": "multi_hop",
+    "summary": "The trace deals with a multi-hop question asking about specific aspects of an adoption agency's inclusivity, comparing its support for LGBTQ+ individuals, and providing examples of its previous assistance. The plan includes a comprehensive set of info_needs and selects appropriate tools to address these needs.",
+    "experience": "IF A question requires detailed information on specific features and comparative data from multiple sources THEN SELECT info_needs to cover unique aspects while avoiding overlap, and choose a mix of keyword, vector, and page_index tools."
+  },
+  {
+    "condition": "What specific aspects of the adoption agency's inclusivity and support for LGBTQ+ individuals did Caroline find appealing? How does the adoption agency's focus on LGBTQ+ rights align with Caroline's personal values of acceptance and equality? What particular services offered by the adoption agency inspired Caroline to choose it over other agencies? Can you provide examples of how the adoption agency has supported LGBTQ+ individuals in the past? What challenges might Caroline have faced in choosing an adoption agency that supports LGBTQ+ individuals?",
+    "situation": "multi_hop",
+    "summary": "The trace focuses on extracting specific details about Caroline's experiences with an adoption agency that supports LGBTQ+ individuals, covering aspects like inclusivity, alignment with personal values, services, past support, and potential challenges. The plan uses a mix of keyword-based and vector-based queries to address these needs.",
+    "experience": "IF A question involves multi-hop reasoning across different aspects of an organization's services and impact on an individual's decision-making process THEN Use a combination of keyword and vector queries to break down the question into distinct info_needs, ensuring each query targets a specific aspect while maintaining a cohesive plan."
+  },
+  {
+    "condition": "What is Caroline excited about in the adoption process?",
+    "situation": "single_fact",
+    "summary": "The user asked about what Caroline is excited about during the adoption process. The plan included info_needs that are not aligned with the question and covered topics that are not relevant.",
+    "experience": "IF The question asks about a specific emotion or event during a particular process THEN Use precise info_needs focusing only on the core topic of the question without extraneous details."
+  },
+  {
+    "condition": "How long have Mel and her husband been married?",
+    "situation": "Time-related query",
+    "summary": "This trace involves a time-related query about Mel and her husband's marriage duration and history. The plan includes retrieving when they got married, their relationship status, and their marital history, using a combination of keyword, vector, and page_index strategies.",
+    "experience": "IF A query asks for a specific duration or timeline related to a personal relationship (such as marriage) THEN Use a combination of exact-match keywords, semantic vector queries, and reading relevant pages to gather both the exact event dates and broader marital history"
+  },
+  {
+    "condition": "What specific aspects of Caroline's roots are represented by her necklace? How does Caroline's involvement in LGBTQ+ activism contribute to her support for inclusivity? What personal growth themes are reflected in Caroline's artwork beyond her gender identity? In what ways does Caroline's necklace serve as a symbol of her journey and acceptance? Which organizations or events related to Caroline's activism are mentioned in the result?",
+    "situation": "single_fact",
+    "summary": "The user’s initial plan fails to focus on the core question about the necklace's symbolism and Caroline's activism, instead including tangential queries about LGBTQ+ activism and artwork.",
+    "experience": "IF The question seeks specific information about a single entity (in this case, Caroline's necklace) and its symbolic significance THEN Narrow down the info_needs to directly address the necklace's symbolism and Caroline's activism, avoiding extraneous topics."
+  },
+  {
+    "condition": "What specific actions or events related to Caroline's necklace symbolize her journey of acceptance? How does Caroline's involvement in LGBTQ+ rights and activism connect to her necklace symbolism? What role do Caroline's hand-painted bowl, stained glass window, and paintings play in representing her journey of self-expression? What does Caroline's participation in the transgender conference specifically symbolize in relation to her necklace? How does Caroline's support from her family manifest in the form of her necklace?",
+    "situation": "multi_hop",
+    "summary": "The trace attempts to address multiple aspects of Caroline's necklace symbolism but fails to clearly define the main query and includes redundant information.",
+    "experience": "IF The question involves multi-hop reasoning across different aspects of a single entity (caroline's necklace) THEN Refine the info_needs to focus on the core symbolic meaning and simplify the tool selection strategy by focusing on vector queries that capture semantic relationships."
+  },
+  {
+    "condition": "What specific colors and patterns are featured on Melanie's hand-painted bowl? In which pottery class did Melanie create her hand-painted bowl? How does Melanie's hand-painted bowl contribute to her personal growth and artistic expression? What emotions does Melanie associate with her hand-painted bowl? Can you provide details about the materials Melanie used to make her hand-painted bowl?",
+    "situation": "multi_hop",
+    "summary": "This trace attempts to answer a multi-hop query about a specific hand-painted bowl but lacks specificity in its info_needs and tool selection.",
+    "experience": "IF a question involves multiple pieces of specific information about a particular entity (like a hand-painted bowl) THEN construct a detailed info_needs list focusing on key attributes and actions, and select appropriate tools like vector queries and keyword collections to efficiently retrieve the needed information."
+  },
+  {
+    "condition": "What specific colors and patterns are featured on Melanie's hand-painted bowl? In which pottery class did Melanie make her hand-painted bowl? How does Melanie feel about the bowl as a reminder of her artistic expression and personal growth? What materials were used to create Melanie's hand-painted bowl? Can you provide a timeline of when Melanie made her hand-painted bowl and how it relates to her personal development?",
+    "situation": "multi_hop",
+    "summary": "The plan attempts to gather detailed information about a hand-painted bowl, including its colors, patterns, class, and materials, but fails to clearly identify the core question and focuses on redundant and less critical aspects.",
+    "experience": "IF a question involves complex queries that require multiple hops of information (e.g., colors, patterns, class, materials, timeline) THEN prioritize identifying and addressing each core hop separately before moving to the next one"
+  },
+  {
+    "condition": "What specific activities did Melanie's family engage in during previous camping trips? How many times does Melanie's family camp together each year? What types of activities does Melanie enjoy doing while camping with her family? Can you provide details on any particular night when Melanie made wishes under the stars during camping? How long do Melanie's family typically stay out camping each time?",
+    "situation": "multi_hop",
+    "summary": "The trace shows that the system identified a set of related questions about Melanie's family camping habits and activities and planned accordingly with no new information needs or tool selections required.",
+    "experience": "IF a series of interrelated questions can be answered through multiple hops of information retrieval without significant new needs or tools being required THEN perform minimal planning to avoid unnecessary tool usage."
+  },
+  {
+    "condition": "What specific pottery class did Melanie attend that resulted in her making a black and white bowl? Who else participated in the pottery class where Melanie made the black and white bowl? Can you provide a photograph of the black and white bowl mentioned by Caroline? What other colors were used in the bowls made by Melanie and Caroline in their respective pottery classes? How many pottery classes did Melanie attend before making the black and white bowl?",
+    "situation": "multi_hop",
+    "summary": "This trace asks for multiple pieces of information about a pottery class where Melanie made a black and white bowl, including the specific class she attended, who else was there, a photograph, other colors used, and the number of classes before making the bowl.",
+    "experience": "IF the question involves multiple hops of information linking to a specific event or item (like a pottery class) THEN construct info_needs for each hop, ensuring they are distinct and actionable, and select appropriate tools for efficient retrieval."
+  },
+  {
+    "condition": "What types of books are specifically mentioned in Caroline's library? Does Caroline's library contain any books related to art or self-portraits? Are there any books on adoption or family dynamics in Caroline's library? Is there any mention of books about painting techniques or pottery making in Caroline's library? Does Caroline own any books that discuss the concept of identity and self-acceptance?",
+    "situation": "multi_hop",
+    "summary": "This trace deals with a multi-hop question asking about specific book types in Caroline's library, but the plan is overly broad and includes non-relevant sub-questions.",
+    "experience": "IF A question asks for specific information about a collection (like books in a library) THEN narrow down the info_needs to only the specific aspects being asked (e.g., type of books, authors, themes) and ensure each query is focused and avoids tangential topics."
+  },
+  {
+    "condition": "What specific genres of books are included in Caroline's library? Does Caroline have any books related to art or self-portraiture in her library? How many books on adoption agencies are available in Caroline's library? Are there any books about painting techniques or pottery making in Caroline's library? Does Caroline own any books about guinea pigs or cats?",
+    "situation": "list/set",
+    "summary": "This trace involves a multi-hop query asking for specific genres and topics of books in Caroline's library, with redundant queries and unclear boundaries between relevant and irrelevant information.",
+    "experience": "IF The question is a multi-hop query seeking specific pieces of information (such as genres of books) in a collection (like Caroline's library) THEN Use targeted info_needs that explicitly ask for the specific information required, avoiding irrelevant sub-questions."
+  },
+  {
+    "condition": "What book did Caroline recommend to Melanie?",
+    "situation": "single_fact",
+    "summary": "The question asks about a specific recommendation between two individuals. The plan identifies the need for the name of the book and the person who made the recommendation.",
+    "experience": "IF A question seeks a specific recommendation or suggestion made between two individuals THEN USE EXACT-MATCH KEYWORD AND SEMANTIC VECTOR QUERIES TO RETRIEVE THE REQUIRED FACT"
+  },
+  {
+    "condition": "What specific type of running shoes did Melanie get? How often does Melanie run after their last chat? Has Melanie noticed any improvements in her mental health since starting to run more frequently? What was the reason behind Melanie's decision to start running longer? Are there any upcoming races or training sessions that Melanie plans to participate in with her new shoes?",
+    "situation": "multi_hop",
+    "summary": "The trace attempts to answer a series of questions about Melanie's running habits, but the plan includes extraneous info_needs and fails to efficiently narrow down the focus to the core question.",
+    "experience": "IF A question involves multiple hops of information (e.g., querying about past events, current status, and future plans) THEN prioritize direct answers to the primary query and avoid unnecessary secondary info_needs."
+  },
+  {
+    "condition": "What specific type of running shoes did Melanie get? How often does Melanie run with her new shoes? Has Melanie noticed any improvement in her mental health since starting to run with her new shoes?",
+    "situation": "multi_hop",
+    "summary": "The user asked about specific types of running shoes Melanie got, how often she runs with them, and if there was an improvement in her mental health. The plan included multiple questions but failed to prioritize the core inquiry.",
+    "experience": "IF a question involves multiple hops of reasoning to reach a conclusion AND includes multiple related but distinct pieces of information THEN prioritize constructing a comprehensive set of info_needs covering all core aspects of the question while selecting appropriate tools to efficiently retrieve the necessary data."
+  },
+  {
+    "condition": "What specific stress-relieving activities does Melanie mention during her session? How has running farther impacted Melanie's mental health according to her own words? What other forms of exercise or activities does Melanie engage in besides running? Does Melanie mention any personal experiences or incidents that led her to start running? What are some benefits Melanie attributes to running that relate to her mental health?",
+    "situation": "multi_hop",
+    "summary": "The trace outlines a plan to address a multi-hop query about Melanie's stress-relieving activities, running, and mental health impacts. It uses a mix of keyword and vector-based queries to cover these aspects, though it includes some redundant phrasing in its info_needs.",
+    "experience": "IF A question requires detailed information about specific occurrences, activities, and their impacts across several steps THEN Use a combination of keyword and vector-based queries to address each aspect separately"
+  },
+  {
+    "condition": "What kind of pot did Mel and her kids make with clay?",
+    "situation": "multi_hop",
+    "summary": "The trace indicates that the system incorrectly approached the question without breaking it down into specific sub-questions and selecting appropriate retrieval methods.",
+    "experience": "IF the question involves finding a specific entity (in this case, a pot) through multiple steps (Mel, her children, and the process of making it) THEN break down the question into sub-questions such as 'Who is Mel?', 'What is the process of making a pot?', and 'What materials were used to make the pot?', and select vector queries to retrieve relevant concepts and pages."
+  },
+  {
+    "condition": "What type of clay did Mel use to make the pot with her kids? How many kids did Mel have when she made the pot with them? What was the size or dimensions of the pot Mel and her kids made? Where did Mel and her kids make the pot together? What techniques or methods did Mel and her kids use to create the pot?",
+    "situation": "multi_hop",
+    "summary": "The trace attempts to answer multiple aspects of the question about the pot-making activity, including the type of clay used, the number of kids involved, the pot's size, where it was made, and the techniques used. The plan includes keyword and vector queries to address these needs.",
+    "experience": "IF A multi-hop query involves multiple pieces of information that require different types of retrieval (e.g., specific facts, concepts, and methods) THEN Use targeted info_needs and tool selection strategies tailored to each aspect of the query to ensure efficient and accurate information gathering."
+  },
+  {
+    "condition": "What specific type of clay did Melanie and her kids use during the pottery workshop? How long did the pottery workshop last according to the participants' experience? Did Melanie and her kids create any particular design or motif on their pots during the workshop? What tools were provided to Melanie and her kids for shaping and decorating their pots during the workshop? Was there any feedback or assessment given to Melanie and her kids' pots after the workshop?",
+    "situation": "multi_hop",
+    "summary": "This trace addresses a multi-hop query focusing on details of a pottery workshop, including the pot's design, tools used, and feedback. The initial plan included too many irrelevant info_needs and tools.",
+    "experience": "IF <QUESTION contains multiple aspects requiring detailed information> THEN <CONSTRUCT info_needs by focusing on core query aspects and selecting appropriate tools>"
+  },
+  {
+    "condition": "What specific painting projects do Mel and her kids focus on together? Does Mel use pottery or painting as a form of therapy for herself or her children? Is there any other creative project Mel and her kids engage in besides pottery and painting? How often does Mel and her family participate in their creative projects together? Do any of Mel's kids have a particular interest in either pottery or painting?",
+    "situation": "multi_hop",
+    "summary": "The user asked about specific painting projects Mel and her kids focus on together and whether she uses pottery or painting as therapy. The plan included additional questions about participation frequency and individual interests, leading to a less focused and efficient plan.",
+    "experience": "IF the question asks for specific details about a multi-hop query involving multiple related facts (e.g., painting projects, therapy usage, participation frequency) THEN refine the info_needs to address only the immediate and direct questions without expanding to tangential topics."
+  },
+  {
+    "condition": "What specific types of paintings do Mel and her kids create together? How often do Mel and her kids participate in painting sessions together besides pottery? Do Mel and her kids have any particular themes or subjects in their nature-inspired paintings? What other materials besides pottery and painting does Mel engage in with her kids for creative projects? Can you find out if there are any competitions or exhibitions where Mel and her kids' artwork has been displayed or entered?",
+    "situation": "multi_hop",
+    "summary": "This trace asks about specific types of paintings Mel and her kids create together, how often they participate in painting sessions, and other related creative projects. The plan attempts to gather this information but includes unnecessary details like competitions and themes.",
+    "experience": "IF A query involves multiple related hops to gather detailed information about a topic (in this case, types of paintings, frequency, themes, and related activities) THEN Refine the 'info_needs' to directly address the core question and focus on efficient tool selection."
+  },
+  {
+    "condition": "What did Caroline see at the council meeting for adoption?",
+    "situation": "single_fact",
+    "summary": "The trace contains a question about a past event ('What did Caroline see at the council meeting for adoption?') but fails to break down the information needs into specific sub-questions or select appropriate retrieval strategies.",
+    "experience": "IF the question is about a specific event or observation (e.g., 'What did someone do/say/see at a particular event?') THEN identify key participants, events, and actions involved, and select keyword-based retrieval to find the most relevant documents."
+  },
+  {
+    "condition": "What does Caroline specifically say about sunflowers representing warmth and happiness? Can you find out if Caroline has mentioned sunflowers representing warmth and happiness in any other session or context? Is there any additional information about the symbolism of sunflowers in Caroline's personal life or beliefs? Could you retrieve more details on how Caroline connects sunflowers to feelings of warmth and happiness? Are there any specific quotes or statements from Caroline where she explicitly mentions sunflowers representing warmth and happiness?",
+    "situation": "multi_hop",
+    "summary": "The trace involves a multi-hop query asking for specific quotes, mentions of symbolism, and additional context related to Caroline's statements about sunflowers representing warmth and happiness.",
+    "experience": "IF a question seeks multiple pieces of information that require different retrieval strategies (e.g., specific quotes, mentions of symbolism, additional context) THEN break down the question into specific info_needs and select appropriate tools (e.g., keyword matching for quotes, vector-based search for symbolic meanings, page indexing for contextual information)"
+  },
+  {
+    "condition": "Why are flowers important to Melanie?",
+    "situation": "single_fact",
+    "summary": "The user asked why flowers are important to Melanie, and the plan included sub-questions about her painting and career, which are not directly related to the question.",
+    "experience": "IF A question asks for the significance or importance of something to a particular person (e.g., why flowers are important to Melanie), THEN focus on direct, specific queries related to that person and the thing being evaluated (e.g., 'What is the therapeutic value of flowers for Melanie?')"
+  },
+  {
+    "condition": "How often does Melanie go to the beach with her kids?",
+    "situation": "single_fact",
+    "summary": "This trace shows that the planning module did not generate any info_needs or tools, indicating a failure to properly dissect the question into actionable components and selecting appropriate retrieval methods.",
+    "experience": "IF the question is about frequency or regularity of an activity involving multiple people (in this case, Melanie and her kids) THEN construct specific info_needs such as 'how often does Melanie visit the beach' and 'how often do Melanie's kids visit the beach', and select keyword collection for searching recent posts or articles mentioning these activities."
+  },
+  {
+    "condition": "What specific date did Melanie and her family go on their camping trip last year? How many members were in Melanie's family during their camping trip last year? What other celestial phenomena, apart from the Perseid meteor shower, did Melanie and her family observe during their camping trip? What was the weather condition like during the night when Melanie and her family witnessed the Perseid meteor shower? Did Melanie and her family set up camp near any bodies of water during their camping trip last year?",
+    "situation": "single_fact",
+    "summary": "The trace involves a single_fact query about a camping trip, where the plan attempts to gather detailed information but fails to focus on the primary question.",
+    "experience": "IF The question is a single_fact query about a specific event (like a camping trip) THEN Construct a plan that directly addresses the core question without redundant sub-queries."
+  },
+  {
+    "condition": "What specific date and time did Melanie and her family witness the Perseid meteor shower? How many wishes did Melanie and her family make during the Perseid meteor shower? What other celestial objects were visible in the sky during Melanie and her family's camping trip? Did Melanie and her family experience any weather conditions during their camping trip that affected their viewing of the Perseid meteor shower? How long did Melanie and her family stay at the camping site before and after witnessing the Perseid meteor shower?",
+    "situation": "multi_hop",
+    "summary": "The trace involves a multi-hop question asking for specific dates, wishes, celestial objects, weather conditions, and duration of a camping trip involving Melanie and her family. The initial plan attempts to gather detailed information but fails to focus on the main question, leading to inefficiency and redundancy.",
+    "experience": "IF a question involves multiple aspects (dates, wishes, objects, weather, duration) related to a single event (a camping trip) THEN prioritize and clarify the main entity (Melanie and her family) and the primary event (the camping trip), then refine info_needs to focus on direct answers to these aspects."
+  },
+  {
+    "condition": "Whose birthday did Melanie celebrate recently?",
+    "situation": "Time-related query",
+    "summary": "This trace involves a time-related query asking for a recent birthday celebration of Melanie. The plan attempts to gather more information than needed, leading to an inefficient retrieval process.",
+    "experience": "IF A question asks for a recent event involving a specific person (like a birthday celebration), THEN focus on direct queries related to that event rather than additional questions about the person's activities."
+  },
+  {
+    "condition": "What pet does Caroline have?",
+    "situation": "single_fact",
+    "summary": "This trace attempts to gather information about Caroline's pets by asking about her adoption of children and the presence of multiple pets, which are not pertinent to the main question.",
+    "experience": "IF The question is about identifying a specific fact related to a person's possession (in this case, a pet) THEN Use concise info_needs focusing solely on the specific fact needed, and select simple tools like 'keyword' to retrieve the exact information."
+  },
+  {
+    "condition": "What is the name of the pet that Caroline specifically asked about? Is Oscar Caroline's only guinea pig, or does she have others? What is the name of the dog that Caroline owns? What is the name of the cat that Caroline owns? Does Caroline own any other pets besides a dog, a cat, and a guinea pig?",
+    "situation": "single_fact",
+    "summary": "The user asks for the name of a specific pet Caroline requested, whether Oscar is the only guinea pig, the name of a dog, the name of a cat, and if Caroline has any other pets besides a dog, cat, and guinea pig. The plan includes keyword, vector, and page index tools but is overly complex and redundant.",
+    "experience": "IF The question asks for specific fact(s) about a set of related entities (pets) and their properties (name, presence/number) THEN Simplify the info_needs to include only the required facts and select appropriate tools for direct entity and attribute retrieval."
+  },
+  {
+    "condition": "What is the name of Caroline's guinea pig? Does Caroline own any other pets besides Oscar, a guinea pig? How many pets does Caroline have in total? Is Oscar the only guinea pig Caroline owns? What is the breed of Oscar, Caroline's guinea pig?",
+    "situation": "multi_hop",
+    "summary": "This trace involves a multi-hop question asking for details about Caroline's pets, including their names, whether they are unique, and the total number of pets. The plan fails by including unnecessary details and using too many diverse tools.",
+    "experience": "IF A question asks for detailed information about a set of related entities (in this case, Caroline's pets) THEN Use a more focused info_needs that directly addresses the core query and select appropriate tools like 'keyword' for direct entity retrieval."
+  },
+  {
+    "condition": "What is the name of the pet Luna? What is the name of the pet Oliver? What is the name of the pet Oscar? Does Caroline own any other pets besides Oscar?",
+    "situation": "multi_entity_query",
+    "summary": "The user asks about the names of specific pets and whether a particular owner has additional pets, forming a multi-entity query.",
+    "experience": "IF A question contains multiple specific entities (pets in this case) that need to be individually identified THEN Use a more focused set of info_needs and tools to address each entity separately, avoiding irrelevant queries."
+  },
+  {
+    "condition": "What is the name of the pet Luna? What is the name of the pet Oliver? What is the name of the guinea pig Oscar? Does Caroline own any other pets apart from Oscar?",
+    "situation": "multi_hop",
+    "summary": "This trace involves a multi-hop query asking for the names of specific pets and checking if someone else has additional pets. The plan fails to address the core question efficiently by including irrelevant info_needs and tools.",
+    "experience": "IF A multi-hop query asks for specific facts about individual entities (pets) and their owners (Caroline), AND includes questions that could be answered more directly by focusing on these specifics, THEN prioritize concise info_needs and tool selection strategies that target the exact facts needed."
+  },
+  {
+    "condition": "Where did Oliver hide his bone once?",
+    "situation": "single_fact",
+    "summary": "This trace shows a plan for a question about where Oliver hid his bone, but the info_needs and tools are incorrect and irrelevant.",
+    "experience": "IF the question asks for information about a specific item or event (e.g., 'Where...') THEN the info_needs and tools should focus on retrieving facts about the entity or event mentioned in the question."
+  },
+  {
+    "condition": "What specific location within the garden shed did Oliver hide his bone? Who else was present when Oliver hid his bone in the garden shed? What day or time period was Oliver hiding his bone in the garden shed? Was there anything unusual about the garden shed when Oliver hid his bone? How did Oliver feel when he hid his bone in the garden shed?",
+    "situation": "multi_hop",
+    "summary": "The trace addresses a multi-hop query about specific locations, presence of others, time periods, unusual aspects, and emotional states within a garden shed. The plan attempts to cover these aspects using various retrieval methods but fails to simplify the process.",
+    "experience": "IF a question involves multiple pieces of specific information that require multi-hop reasoning and direct retrieval THEN prioritize concise info_needs and focus on efficient tool selection (e.g., keyword matching) to address the core query without unnecessary complexity."
+  },
+  {
+    "condition": "What was Oliver's bone made of? Where exactly was the garden shed located in relation to Oliver's home? How did Oliver discover the bone's hiding place? Who else was present when Oliver hid the bone in the garden shed? Did Oliver have any companions or friends with him when he hid the bone?",
+    "situation": "multi_hop",
+    "summary": "This trace attempts to retrieve multiple aspects of a single event involving Oliver, including the bone's composition, location, discovery method, and companionship, without focusing on the primary query about the bone itself.",
+    "experience": "IF the question involves multiple steps or entities (e.g., a sequence of events) that require detailed information, THEN prioritize identifying the most critical immediate need (e.g., the main event or key piece of information) and formulate a plan that addresses these first before expanding to secondary details."
+  },
+  {
+    "condition": "What activity did Caroline used to do with her dad?",
+    "situation": "Time-related query",
+    "summary": "This trace involves a time-related query asking about a past activity between two individuals. The planning strategy aims to gather information on the specific activity, its existence, and the nature of their shared activities.",
+    "experience": "IF A question seeks information about a past interaction or activity between two individuals THEN Use comprehensive info_needs covering the activity itself, its occurrence, and the nature of their activities together. Select tools that allow for both exact-match and semantic searches."
+  },
+  {
+    "condition": "What specific song did Caroline mention during her counseling session? How does Caroline's empathy and understanding as a counselor specifically motivate her to be courageous? Can you provide more details on Caroline's experiences supporting the LGBTQ+ community? What was the impact of the support Caroline received from the community on her courage? Who else mentioned Caroline's courage in the given context?",
+    "situation": "multi_hop",
+    "summary": "The trace attempts to answer a multi-hop question about Caroline's counseling session, her motivations, experiences, and impacts, but fails to break down these aspects into distinct retrieval steps.",
+    "experience": "IF <QUESTION HAS MULTIPLE INTERRELATED ASPECTS THAT NEED SEPARATE QUERYING> THEN <CONSTRUCT DISTINCT INFO_NEEDS AND SELECT APPROPRIATE TOOLS FOR EACH QUERY>"
+  },
+  {
+    "condition": "What specific song did Caroline mention during her counseling session? How does Caroline's support for the LGBTQ+ community motivate her to be courageous? What event or experience led Caroline to express her motivation to be courageous? What qualities does Caroline possess that make her empathetic and understanding as a counselor? How has Caroline's journey in the LGBTQ+ community influenced her courage to be supportive?",
+    "situation": "multi_hop",
+    "summary": "This trace attempts to answer a multi-faceted question about Caroline's counseling sessions, motivations, and qualities but fails to break down the question into separate retrieval plans with defined info_needs and appropriate tools.",
+    "experience": "IF <QUESTION contains multiple related sub-questions that require different levels of detail and context> THEN <RETRIEVE info_needs for each sub-question separately, select suitable tools like keyword_collection or vector_queries for each, and ensure a clear page_index if relevant>"
+  },
+  {
+    "condition": "How long has Melanie been creating art?",
+    "situation": "Time-related query",
+    "summary": "The user wants to know the duration of Melanie’s artistic career, but the plan includes inquiries about the types of art she creates, which are not necessary for answering the main question.",
+    "experience": "IF The question is asking for a time-related fact about an individual's career or activity THEN The info_needs should focus on direct questions related to the timeline of the activity, avoiding inquiries about unrelated aspects."
+  },
+  {
+    "condition": "What specific pottery workshops has Melanie attended? When did Melanie start making pottery? In which pottery classes did Melanie participate before SESSION 12? How many months have passed since Melanie's first pottery class? What types of pottery projects has Melanie worked on beyond just bowls?",
+    "situation": "multi_hop",
+    "summary": "This trace asks for specific pottery workshops, start date, classes before SESSION 12, duration since first class, and types of projects beyond bowls, which are tangential to the main question about the duration of Melanie's art creation.",
+    "experience": "IF <Question contains multiple hops between related concepts> THEN <Construct a plan that focuses on the primary hop and its supporting hops, avoiding redundant queries>"
+  },
+  {
+    "condition": "What specific pottery workshops did Melanie attend before SESSION 13? In which pottery classes did Melanie participate before SESSION 12? How many months have passed since Melanie started pottery according to SESSION 12? What types of pottery does Melanie make besides the bowl mentioned in SESSION 12? Can you provide the duration of the pottery workshop mentioned in SESSION 13?",
+    "situation": "multi_hop",
+    "summary": "The original question asks about specific pottery workshops, classes, duration, and types of pottery before SESSION 12 and SESSION 13. The planning trace attempts to gather this information but includes redundant queries and focuses on pottery-specific details that are not relevant to the main question.",
+    "experience": "IF The question involves specific details about past events or activities (e.g., pottery workshops, classes) that are asked in multiple hops without directly addressing the core query THEN Construct info_needs to focus on the core question and avoid redundant queries by using more targeted tools such as keyword matching for direct answers."
+  },
+  {
+    "condition": "What setback did Melanie face in October 2023?",
+    "situation": "multi_hop",
+    "summary": "The user seeks details about a specific setback faced by Melanie in October 2023. The plan includes clear info_needs for the required information and selects keyword and vector retrieval strategies.",
+    "experience": "IF A question seeks specific information about an event or occurrence that happened at a particular time involving a specific individual THEN SELECT 'Specific sub-events' AND 'Exact date' AS info_needs AND CHOOSE 'vector' FOR SEMANTIC RETRIEVAL AND 'keyword' FOR EXACT-MATCH RETRIEVAL"
+  },
+  {
+    "condition": "What kind of painting did Caroline share with Melanie on October 13, 2023?",
+    "situation": "single_fact",
+    "summary": "The user asks about a specific painting shared between two individuals on a particular date, but the plan fails to specify what information is needed or how to find it.",
+    "experience": "IF A question seeks specific information about a past event involving multiple entities (in this case, Caroline and Melanie) THEN Identify the key facts required (type of painting, date, context of sharing) and select appropriate tools (such as keyword searches for specific dates and entity names)"
+  },
+  {
+    "condition": "What specific elements from the sunset in Caroline's drawing symbolize her connection to nature? How does Caroline's self-portrait in the drawing reflect her personal growth and authenticity? What other forms of art besides pottery and stained glass has Caroline explored since creating the drawing? In what ways does Caroline's artwork, including the drawing, aim to promote acceptance and understanding of the LGBTQ+ community? What was the emotional state Caroline was experiencing when she visited the beach and created the drawing?",
+    "situation": "multi_hop",
+    "summary": "This trace involves a multi-hop reasoning process to understand specific elements of Caroline's artwork and her personal experiences, focusing on various aspects such as symbolism, personal growth, and community promotion.",
+    "experience": "IF the question involves multiple interconnected aspects requiring multi-hop reasoning AND the response plan lacks detailed info_needs and tool strategies THEN generate comprehensive info_needs covering each aspect and select appropriate tools for semantic and keyword-based queries."
+  },
+  {
+    "condition": "How do Melanie and Caroline describe their journey through life together?",
+    "situation": "multi_hop",
+    "summary": "This trace attempts to understand how Melanie and Caroline describe their journey together but includes irrelevant sub-questions and redundant queries.",
+    "experience": "IF The question involves a multi-hop understanding of a relationship or journey between two individuals THEN Focus on direct, relevant aspects of their shared experiences and avoid tangential details in the info_needs."
+  },
+  {
+    "condition": "How did Melanie's son handle the accident?",
+    "situation": "single_fact",
+    "summary": "This trace attempts to address a question about how Melanie's son handled an accident by identifying relevant keywords and using vector queries. However, the info_needs include unrelated concepts like therapy and counseling, and the tools are too broad, leading to inefficiency.",
+    "experience": "IF A question seeks information about immediate responses or actions taken in a specific incident (like an accident) THEN focus on direct, actionable facts related to the incident without including extraneous details such as therapy or counseling."
+  },
+  {
+    "condition": "What activities did Melanie's son participate in during the camping trip? How does Melanie's son feel about the accident that occurred? What support systems does Melanie's son have in place after the accident? Does Melanie's son have any specific challenges or needs following the accident? What kind of assistance did Melanie's son receive from his mother and family after the accident?",
+    "situation": "multi_hop",
+    "summary": "The user asked about specific activities, feelings, support systems, challenges, and assistance received by Melanie's son after an accident. The plan identifies these needs and selects tools to address them.",
+    "experience": "IF A question involves multiple interconnected pieces of information that require sequential retrieval steps THEN Construct an info_needs list covering each step of the information gap, and select tools that can handle sequential semantic and keyword-based searches."
+  },
+  {
+    "condition": "How did Melanie feel about her family after the accident?",
+    "situation": "Multi-hop time-related query",
+    "summary": "The planner aims to understand Melanie's feelings towards her family before and after an accident. It identifies two info_needs: one for pre-accident feelings and another for post-accident feelings, which could be consolidated into a single query for better efficiency.",
+    "experience": "IF A question seeks detailed information about a person's emotional state over multiple time periods following a significant event THEN Consolidate overlapping info_needs into a single, more comprehensive query to reduce redundancy and improve efficiency."
+  }
+]
